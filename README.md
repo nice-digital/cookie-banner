@@ -78,3 +78,17 @@ Use the following commands for local development:
 Run `npm run build -- --env.version=1.2.3` to create a production build, where 1.2.3 is any version you want. This creates a build into the dist folder and is what is used to deploy to the CDN.
 
 > We pass in a version argument (--env.version=X), because we assume this step will be run by TeamCity. TC (and the NuGet packages we push to Octo) have different versioning schemes from npm packages - build numbers produced by TeamCity aren't valid version numbers that can be used in package.json e.g. a build number of 1.2.3.4-r2a3d4f. Note: this will be fixed by https://github.com/nice-digital/teamcity-build-number/issues/16.
+
+## Deployment package
+
+We pack a _nupkg_ file for deployment to the CDN, using `dotnet pack` in TeamCity. This is then passed to Octopus Deploy for deployment to the CDN.
+
+Run the following to to test what the deployment packages looks like locally. First run `npm run build && cd dist && npm pack ../` to create the dist folder containing the CDN bundles and npm tgz. Then run the following command:
+
+```
+dotnet pack NICE.CookieBanner.CDN.csproj -o publish /p:Version=1.2.3-r1a2b3c
+```
+
+Where the version number can be any valid [SemVer build number](https://octopus.com/blog/semver2) compatible with Octopus Deploy. This version number will be the build number when TeamCity creates this build artifact, i.e. `/p:Version=%build.number%`
+
+> Note: you'll need the .NET Core SDK installed. We use `dotnet pack` (and not NuGet.exe) to pack so we can run on both Windows and Linux
