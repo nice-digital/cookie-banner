@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<IncludeBuildOutput>false</IncludeBuildOutput>
+		<Title>Cookie Banner CDN</Title>
+		<Description>Cookie Banner deployment package for the NICE CDN</Description>
+		<RepositoryUrl>https://github.com/nice-digital/cookie-banner</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<NoBuild>true</NoBuild>
+		<SkipCompilerExecution>true</SkipCompilerExecution>
+		<CopyBuildOutputToOutputDirectory>false</CopyBuildOutputToOutputDirectory>
+		<SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+	</PropertyGroup>
+	<ItemGroup>
+		<Content Include="dist/*" Exclude="dist/*.tgz">
+			<Pack>true</Pack>
+			<PackagePath>cookie-banner</PackagePath>
+		</Content>
+		<Content Include="dist/*">
+			<Pack>true</Pack>
+			<PackagePath>cookie-banner/$(Version)</PackagePath>
+		</Content>
+	</ItemGroup>
+</Project>
