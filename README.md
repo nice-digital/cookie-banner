@@ -34,7 +34,7 @@ There are 2 main ways to use the cookier banner: either [via the NICE CDN](#cdn)
 
 ### CDN
 
-Loading directly via the CDN is the easiest and most convenenient way to include the cookie banner. This is a good method for projects without a module bundling system, or as a quick way to get started.
+Loading directly via the CDN is the easiest and most convenenient way to include the cookie banner. This is a good method for projects without a module bundling system, or as a quick way to get started. It also means you always have the latest version of the cookie banner as you don't need a version bump release.
 
 > using the CDN adds an extra HTTP request, so adds a slight performance overhead. Importing the module version (see the [import](#import) section below) is a better option for projects with a module bundling system (for example with webpack).
 
@@ -42,7 +42,7 @@ TODO - add CDN URLs
 
 ### Import
 
-Importing the cookie banner as a module
+Importing the cookie banner as a module allows integrating it into your code base and build. This means you have more control over how the cookie banner is loaded. The downside is you fix the version in your package.json so you need a release to update to a newer version of the cookie banner.
 
 TODO
 
