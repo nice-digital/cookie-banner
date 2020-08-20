@@ -16,7 +16,9 @@
     "lint:ts:fix": "npm run lint:ts -- --fix",
     "// TYPECHECKING": "",
     "ts": "tsc",
-    "ts:check": "tsc --noEmit"
+    "ts:check": "tsc --noEmit",
+    "// NPM LIFECYCLE": "",
+    "prepack": "npm run ts"
   },
   "repository": {
     "type": "git",
@@ -33,8 +35,7 @@
   "license": "MIT",
   "homepage": "https://github.com/nice-digital/cookie-banner#readme",
   "files": [
-    "lib",
-    "dist"
+    "lib"
   ],
   "devDependencies": {
     "@types/loadjs": "^4.0.0",
