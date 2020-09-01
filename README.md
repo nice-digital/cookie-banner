@@ -62,7 +62,7 @@ TODO
 
 Use the following commands for local development:
 
-- `npm start` - TODO
+- `npm start` - Starts dev server on http://localhost:8089/
 - `npm run build` - builds minified and unminified bundle into the _dist_ for deployment to the CDN
 - `npm test` - TODO
 - `npm run lint` - lints all source files, runs Prettier and runs type checking
