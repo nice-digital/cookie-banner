@@ -4,11 +4,20 @@ export const cookieControlConfig: CookieControlConfig = {
 	apiKey: "3ab778bf4c01a823e21ecf007301b3329f9e000e",
 	product: "COMMUNITY",
 	onLoad: function (): void {
-		window.dataLayer.push({
-			event: "cookie.load",
-			preferencesCookies: window.CookieControl.getCategoryConsent(0),
-			analyticsCookies: window.CookieControl.getCategoryConsent(1),
-		});
+		// We need the try/catch because on first load, when the cookie doesn't exist then getCategoryConsent errors
+		let preferencesCookies = false;
+		let analyticsCookies = false;
+		try {
+			preferencesCookies = window.CookieControl.getCategoryConsent(0);
+			analyticsCookies = window.CookieControl.getCategoryConsent(1);
+		} catch {
+		} finally {
+			window.dataLayer.push({
+				event: "cookie.load",
+				preferencesCookies,
+				analyticsCookies,
+			});
+		}
 	},
 	necessaryCookies: [
 		// AWS sticky sessions - https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html
