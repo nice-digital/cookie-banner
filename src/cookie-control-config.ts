@@ -7,19 +7,28 @@ export const cookieControlConfig: CookieControlConfig = {
 		// AWS sticky sessions - https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html
 		"AWSELB",
 		"AWSELBCORS",
-		"AthensAuth",
+		"AWSALBTG",
+		"AWSALBTGCORS",
 		// NICE Accounts
 		"__ngat_1.2",
 		"__nrpa_2.2",
+		// IdAM
+		"IdAM",
+		"IdAM-*",
+		// OpenAthens
+		".AspNet.ClientCookie",
+		"OpenIdConnect.nonce.*",
 		// General ASP.NET
 		"ASPXAUTH",
 		"ASP.NET_SessionId",
 		// .NET MVC CSRF
 		"__RequestVerificationToken",
-		// META Tool login
-		"Meteor.loginToken",
-		"Meteor.loginTokenExpires",
-		"Meteor.userId",
+		// Internal use for Consultations
+		"documentReferrer",
+		// Evidence Search UI state
+		"downloadopen",
+		// NICE.Boostrap scroll position
+		"ud",
 	],
 	optionalCookies: [
 		{
@@ -28,13 +37,12 @@ export const cookieControlConfig: CookieControlConfig = {
 			description:
 				"These cookies remember information that changes the way our website behaves or looks, like your preferred language or the region that you are in.",
 			cookies: [
-				"downloadopen",
+				// Consultations: Preference for hiding the tutorial
 				"TutorialVisible",
-				"documentReferrer",
-				"mobile-mode",
-				"history-stack",
-				"history-stack-groupUid",
+				// HDAS: Preference for search panel position
 				"HoistSearches",
+				// Guidance list: Preference for applied filters
+				"NICE_guidanceList_*",
 			],
 			onAccept: function (): void {
 				window.dataLayer.push({ event: "cookie.preferences.accept" });

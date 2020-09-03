@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`cookie-control-config should match snapshot 1`] = `
+Object {
+  "apiKey": "3ab778bf4c01a823e21ecf007301b3329f9e000e",
+  "initialState": "box",
+  "necessaryCookies": Array [
+    "AWSELB",
+    "AWSELBCORS",
+    "AWSALBTG",
+    "AWSALBTGCORS",
+    "__ngat_1.2",
+    "__nrpa_2.2",
+    "IdAM",
+    "IdAM-*",
+    ".AspNet.ClientCookie",
+    "OpenIdConnect.nonce.*",
+    "ASPXAUTH",
+    "ASP.NET_SessionId",
+    "__RequestVerificationToken",
+    "documentReferrer",
+    "downloadopen",
+    "ud",
+  ],
+  "optionalCookies": Array [
+    Object {
+      "cookies": Array [
+        "TutorialVisible",
+        "HoistSearches",
+        "NICE_guidanceList_*",
+      ],
+      "description": "These cookies remember information that changes the way our website behaves or looks, like your preferred language or the region that you are in.",
+      "label": "Preferences",
+      "name": "preferences",
+      "onAccept": [Function],
+      "onRevoke": [Function],
+    },
+    Object {
+      "cookies": Array [
+        "_g*",
+        "_hj*",
+        "ajs_*",
+        "_vwo*",
+        "_vis*",
+      ],
+      "description": "We use tools such as Google Analytics, Hotjar, VWO and Loop11 to help us measure how you use the website. This allows us to improve the website based on user needs. These tools set cookies that store anonymised information about how you got to the site, and how you interact with the site.",
+      "label": "Website usage cookies",
+      "name": "analytics",
+      "onAccept": [Function],
+      "onRevoke": [Function],
+    },
+  ],
+  "position": "left",
+  "product": "COMMUNITY",
+  "rejectButton": false,
+  "settingsStyle": "link",
+  "statement": Object {
+    "description": "For more information vist our",
+    "name": "Cookie Policy",
+    "updated": "17/08/2020",
+    "url": "https://www.nice.org.uk/terms-and-conditions",
+  },
+  "text": Object {
+    "accept": "I accept cookies",
+    "acceptSettings": "I accept cookies",
+    "necessaryDescription": "These cookies enable basic functions like page navigation and access to secure areas of the website. Our website cannot function properly without these cookies. You are not likely to get all of these cookies on any given visit, as some of them only appear in a few pages on our site.",
+    "notifyTitle": "Cookies on NICE websites",
+    "title": "Cookies on NICE websites",
+  },
+  "theme": "light",
+  "toggleType": "slider",
+}
+`;
