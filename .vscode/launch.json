@@ -9,7 +9,8 @@
       "request": "launch",
       "name": "Jest Tests",
       "program": "${workspaceRoot}\\node_modules\\jest\\bin\\jest.js",
-      "args": ["-i"],
+      "args": ["-c", "./jest.config.js", "--verbose", "-i", "--no-cache"],
+      "console": "integratedTerminal",
       "internalConsoleOptions": "openOnSessionStart",
       "outFiles": ["${workspaceRoot}/dist/**/*"]
     },
