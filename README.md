@@ -64,7 +64,7 @@ Use the following commands for local development:
 
 - `npm start` - TODO
 - `npm run build` - builds minified and unminified bundle into the _dist_ for deployment to the CDN
-- `npm test` - TODO
+- `npm test` - runs the test unit tests
 - `npm run lint` - lints all source files, runs Prettier and runs type checking
 - `npm run prettier` - checks all files against Prettier code style
 - `npm run prettier:fix` - fixes any prettier issues
