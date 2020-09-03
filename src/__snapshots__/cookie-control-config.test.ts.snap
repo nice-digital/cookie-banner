@@ -22,6 +22,7 @@ Object {
     "downloadopen",
     "ud",
   ],
+  "onLoad": [Function],
   "optionalCookies": Array [
     Object {
       "cookies": Array [
