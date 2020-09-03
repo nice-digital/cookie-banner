@@ -20,6 +20,7 @@ Object {
     "__RequestVerificationToken",
     "documentReferrer",
     "downloadopen",
+    "ud",
   ],
   "optionalCookies": Array [
     Object {

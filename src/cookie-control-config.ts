@@ -27,6 +27,8 @@ export const cookieControlConfig: CookieControlConfig = {
 		"documentReferrer",
 		// Evidence Search UI state
 		"downloadopen",
+		// NICE.Boostrap scroll position
+		"ud",
 	],
 	optionalCookies: [
 		{
