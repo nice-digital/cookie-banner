@@ -20,7 +20,9 @@ An easy and convenient way to load the NICE digital services cookie banner. It's
 
 ### Architecture
 
-TODO
+The cookie banner is a wrapper around Civic's Cookie Control tool. It will be called by each system via the CDN in a configurable script tag specifying that sites cookies.
+
+The service is built in Typescript and compiled into js using webpack and babel.
 
 ### Usage within other services
 
@@ -54,9 +56,9 @@ TODO
 2. Open the project folder with [VSCode](https://code.visualstudio.com/)
 3. Install the recommend VSCode extensions
    1. VSCode should prompt you to do this as we include an [extensions.json](.vscode/extensions.json)
-4. Run `npm start` to run the project locally TODO
+4. Run `npm start` to run the project locally on http://localhost:8089/
    1. Or use the built in VSCode JavaScript debugging TODO
-5. View http://localhost:TODO to view the development site in a browser.
+5. View http://localhost:8089 to view the development site in a browser.
 
 ### Commands
 
