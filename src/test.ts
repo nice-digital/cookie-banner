@@ -1,9 +1,20 @@
-function sum(a: number, b: number): number {
-	return a + b;
-}
+import { loadCookieControl } from "./index";
+// import { mocked } from "ts-jest/utils";
 
-describe("Example test", () => {
-	it("adds 1 + 2 to equal 3", () => {
-		expect(sum(1, 2)).toBe(3);
+describe("Load cookie control tests", () => {
+	//TODO
+	// it("should load cookie control plugin with config", () => {
+	// 	const CookieControl: any = {
+	// 		load: jest.fn(),
+	// 	};
+	// 	window.CookieControl = mocked(CookieControl);
+	// 	const mockConfig = jest.mock("./cookie-control-config.ts");
+	// 	loadCookieControl();
+	// 	expect(window.CookieControl.load).toHaveBeenCalledWith(mockConfig);
+	// });
+
+	it("should ensure dataLayer exists", () => {
+		loadCookieControl();
+		expect(window.dataLayer).toBeTruthy;
 	});
 });
