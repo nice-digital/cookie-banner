@@ -32,7 +32,7 @@ See the [usage](#usage) section below for detailed usage instructions.
 
 ## Usage
 
-There are 2 main ways to use the cookier banner: either [via the NICE CDN](#cdn) as a script include or as an [import](#import) into your JavaScript module bundling:
+There are 2 main ways to use the cookier banner: either [via the NICE CDN](#cdn) as a script include or as an [import](#import) into your JavaScript module bundling. Once you've included the script, you then need to [integrate it into your application](#integrate-with-your-application).
 
 ### CDN
 
@@ -47,6 +47,45 @@ TODO - add CDN URLs
 Importing the cookie banner as a module allows integrating it into your code base and build. This means you have more control over how the cookie banner is loaded. The downside is you fix the version in your package.json so you need a release to update to a newer version of the cookie banner.
 
 TODO
+
+### Integrate with your application
+
+There are 2 main ways of hooking into the cookie banner to integrate it into your application:
+
+- via Civic's Cookie Control plugin's methods for example, `CookieControl.getCategoryConsent(0)`
+- or via `dataLayer` events in Google Tag Manager.
+
+#### `datalayer` events
+
+The following dataLayer events and variables are sent from the cookie banner:
+
+On load:
+
+```js
+{
+	event: "cookie.load",
+	preferencesCookies: boolean,
+	analyticsCookies: boolean,
+}
+```
+
+When preference cookies are accepted/revoked:
+
+```js
+{
+	event: "cookie.preferences.accept", // or "cookie.preferences.revoke",
+	preferencesCookies: true, // or false,
+}
+```
+
+When analytics cookies are accepted/revoked:
+
+```js
+{
+	event: "cookie.analytics.accept", // or "cookie.analytics.revoke",
+	analyticsCookies: true, // or false,
+}
+```
 
 ## Development
 
