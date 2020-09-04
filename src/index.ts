@@ -1,6 +1,7 @@
 import loadjs from "loadjs";
 
 import { cookieControlConfig } from "./cookie-control-config";
+import "./cookie-control.css";
 
 export { CookieControlConfig } from "./types/cookie-control";
 export { cookieControlConfig } from "./cookie-control-config";
