@@ -12,4 +12,7 @@ module.exports = {
 		"!src/graphql-fragments/**",
 	],
 	testResultsProcessor: "jest-teamcity-reporter",
+	moduleNameMapper: {
+		"\\.(css|less)$": "<rootDir>/__mocks__/styleMock.ts",
+	},
 };
