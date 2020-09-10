@@ -77,6 +77,14 @@ export const cookieControlConfig: CookieControlConfig = {
 					event: "cookie.analytics.revoke",
 					cookieStorage: "none",
 				});
+
+				window.localStorage.removeItem("vwoSn");
+				for (let i = 0; i < window.localStorage.length; i++) {
+					const item = window.localStorage.key(i) || "";
+					if (item?.match(/_hj.*/)?.length > 0) {
+						window.localStorage.removeItem(item);
+					}
+				}
 			},
 		},
 	],
