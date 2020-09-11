@@ -23,12 +23,15 @@ module.exports = {
 		filename: "cookie-banner.js",
 		path: path.resolve(__dirname, "dist"),
 	},
-	plugins: [new HtmlWebpackPlugin()],
+	plugins: [
+		new HtmlWebpackPlugin({
+			title: "Cookie banner",
+			template: "index.html",
+		}),
+	],
 	devServer: {
 		port: process.env.PORT || 8089,
 		host: "localhost",
-		publicPath: "/",
-		contentBase: path.join(__dirname, "example/"),
 		open: true,
 	},
 };

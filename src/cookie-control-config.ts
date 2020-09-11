@@ -3,6 +3,22 @@ import { CookieControlConfig } from "./types/cookie-control";
 export const cookieControlConfig: CookieControlConfig = {
 	apiKey: "3ab778bf4c01a823e21ecf007301b3329f9e000e",
 	product: "COMMUNITY",
+	onLoad: function (): void {
+		// We need the try/catch because on first load, when the cookie doesn't exist then getCategoryConsent errors
+		let preferencesCookies = false;
+		let analyticsCookies = false;
+		try {
+			preferencesCookies = window.CookieControl.getCategoryConsent(0);
+			analyticsCookies = window.CookieControl.getCategoryConsent(1);
+		} catch {
+		} finally {
+			window.dataLayer.push({
+				event: "cookie.load",
+				preferencesCookies,
+				analyticsCookies,
+			});
+		}
+	},
 	necessaryCookies: [
 		// AWS sticky sessions - https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html
 		"AWSELB",
@@ -45,10 +61,16 @@ export const cookieControlConfig: CookieControlConfig = {
 				"NICE_guidanceList_*",
 			],
 			onAccept: function (): void {
-				window.dataLayer.push({ event: "cookie.preferences.accept" });
+				window.dataLayer.push({
+					event: "cookie.preferences.accept",
+					preferencesCookies: true,
+				});
 			},
 			onRevoke: function (): void {
-				window.dataLayer.push({ event: "cookie.preferences.revoke" });
+				window.dataLayer.push({
+					event: "cookie.preferences.revoke",
+					preferencesCookies: false,
+				});
 			},
 		},
 		{
@@ -69,13 +91,13 @@ export const cookieControlConfig: CookieControlConfig = {
 			onAccept: function (): void {
 				window.dataLayer.push({
 					event: "cookie.analytics.accept",
-					cookieStorage: "cookie",
+					analyticsCookies: true,
 				});
 			},
 			onRevoke: function (): void {
 				window.dataLayer.push({
 					event: "cookie.analytics.revoke",
-					cookieStorage: "none",
+					analyticsCookies: false,
 				});
 			},
 		},
