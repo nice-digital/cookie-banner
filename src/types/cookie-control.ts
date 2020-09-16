@@ -45,7 +45,7 @@ interface CookieControlText {
 	landmark?: string;
 }
 
-interface CookieControlPurpose {
+export interface CookieControlPurpose {
 	name: string;
 	label: string;
 	lawfulBasis?: "legitimate interest" | "consent";
