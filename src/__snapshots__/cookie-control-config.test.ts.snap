@@ -2,7 +2,7 @@
 
 exports[`cookie-control-config should match snapshot 1`] = `
 Object {
-  "apiKey": "3ab778bf4c01a823e21ecf007301b3329f9e000e",
+  "apiKey": "843970763414bd3ac1229c12767f5e7fab9ef68c",
   "initialState": "box",
   "necessaryCookies": Array [
     "AWSELB",
@@ -52,7 +52,7 @@ Object {
     },
   ],
   "position": "left",
-  "product": "COMMUNITY",
+  "product": "PRO_MULTISITE",
   "rejectButton": false,
   "settingsStyle": "link",
   "statement": Object {
