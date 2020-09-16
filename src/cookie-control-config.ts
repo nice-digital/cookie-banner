@@ -1,8 +1,8 @@
 import { CookieControlConfig } from "./types/cookie-control";
 
 export const cookieControlConfig: CookieControlConfig = {
-	apiKey: "3ab778bf4c01a823e21ecf007301b3329f9e000e",
-	product: "COMMUNITY",
+	apiKey: "843970763414bd3ac1229c12767f5e7fab9ef68c",
+	product: "PRO_MULTISITE",
 	onLoad: function (): void {
 		// We need the try/catch because on first load, when the cookie doesn't exist then getCategoryConsent errors
 		let preferencesCookies = false;
