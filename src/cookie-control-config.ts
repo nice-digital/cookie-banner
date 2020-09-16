@@ -49,9 +49,9 @@ export const cookieControlConfig: CookieControlConfig = {
 	optionalCookies: [
 		{
 			name: "preferences",
-			label: "Preferences",
+			label: "Preference cookies",
 			description:
-				"These cookies remember information that changes the way our website behaves or looks, like your preferred language or the region that you are in.",
+				"These cookies remember information that changes the way our website behaves or looks, like your preferred layout or previously viewed pages.",
 			cookies: [
 				// Consultations: Preference for hiding the tutorial
 				"TutorialVisible",
@@ -77,7 +77,7 @@ export const cookieControlConfig: CookieControlConfig = {
 			name: "analytics",
 			label: "Website usage cookies",
 			description:
-				"We use tools such as Google Analytics, Hotjar, VWO and Loop11 to help us measure how you use the website. This allows us to improve the website based on user needs. These tools set cookies that store anonymised information about how you got to the site, and how you interact with the site.",
+				"We use tools such as Google Analytics, Hotjar, VWO and Loop11 to help us anonymously measure how you use our websites. This allows us to make improvements based on our users' needs. These tools set cookies that store anonymised information about how you got to the site, and how you interact with the site.",
 			cookies: [
 				// Google Analytics
 				"_g*",
@@ -113,19 +113,36 @@ export const cookieControlConfig: CookieControlConfig = {
 
 	// Text
 	text: {
-		title: "Cookies on NICE websites",
-		notifyTitle: "Cookies on NICE websites",
+		title: "Cookies on the NICE website and services",
+		intro:
+			"Cookies are files saved on your phone, tablet or computer when you visit a website.\nWe use cookies to store information about how you use the NICE website and services, such as the pages you visit.",
+		notifyTitle: "Cookies on the NICE website and services",
+		notifyDescription:
+			"We store cookies on your device to make our site work and to help us understand how the site is being used.",
+		settings: "Manage cookies",
+		necessaryTitle: "Essential cookies",
 		necessaryDescription:
-			"These cookies enable basic functions like page navigation and access to secure areas of the website. Our website cannot function properly without these cookies. You are not likely to get all of these cookies on any given visit, as some of them only appear in a few pages on our site.",
-		accept: "I accept cookies",
-		acceptSettings: "I accept cookies",
+			"These cookies enable basic functions like page navigation and access to secure areas of the website. Our website cannot function properly without these cookies and they can only be deactivated by changing your browser preferences.",
+		accept: "Accept all cookies",
+		acceptSettings: "Accept all cookies",
 	},
 
 	// Statement
 	statement: {
-		description: "For more information vist our",
-		name: "Cookie Policy",
-		url: "https://www.nice.org.uk/terms-and-conditions",
+		description: "For more information, view our",
+		name: "cookie statement",
+		url: "https://www.nice.org.uk/terms-and-conditions#cookies",
 		updated: "17/08/2020",
+	},
+
+	// Branding
+	branding: {
+		fontFamily: "Lato,'Helvetica Neue',Helvetica,Arial,sans-serif",
+		removeAbout: true,
+	},
+
+	// Accessibility
+	accessibility: {
+		highlightFocus: true,
 	},
 };
