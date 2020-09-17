@@ -28,10 +28,10 @@ const createPlaceholderCookieControl = () => {
 		preferenceCookies =
 			cookieControlCookie?.optionalCookies.preferences === "accepted";
 
-	window.CookieControl = {
-		analyticsCookies,
-		preferenceCookies,
-	} as CookieControl;
+	window.CookieControl = window.CookieControl || ({} as CookieControl);
+
+	window.CookieControl.analyticsCookies = analyticsCookies;
+	window.CookieControl.preferenceCookies = preferenceCookies;
 };
 
 export const loadCookieControl = (): void => {
@@ -45,6 +45,8 @@ export const loadCookieControl = (): void => {
 	);
 
 	loadjs.ready("cookie-control", () => {
+		// Re-add the custom properties after CookieControl is created
+		createPlaceholderCookieControl();
 		window.CookieControl.load(cookieControlConfig);
 	});
 };
