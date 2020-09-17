@@ -18,10 +18,11 @@ Object {
     "ASPXAUTH",
     "ASP.NET_SessionId",
     "__RequestVerificationToken",
-    "documentReferrer",
     "downloadopen",
     "ud",
     "/pathways/*",
+    "documentReferrer",
+    "display-node-orders",
   ],
   "onLoad": [Function],
   "optionalCookies": Array [
