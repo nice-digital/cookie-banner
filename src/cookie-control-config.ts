@@ -41,12 +41,17 @@ export const cookieControlConfig: CookieControlConfig = {
 		"ASP.NET_SessionId",
 		// .NET MVC CSRF
 		"__RequestVerificationToken",
-		// Internal use for Consultations
-		"documentReferrer",
 		// Evidence Search UI state
 		"downloadopen",
 		// NICE.Boostrap scroll position
 		"ud",
+		// Pathways XML cache
+		"/pathways/*",
+		// INTERNAL USE
+		// For InDev -> Consultations
+		"documentReferrer",
+		// Pathways authoring
+		"display-node-orders",
 	],
 	optionalCookies: [
 		{
@@ -61,6 +66,10 @@ export const cookieControlConfig: CookieControlConfig = {
 				"HoistSearches",
 				// Guidance list: Preference for applied filters
 				"NICE_guidanceList_*",
+				// Pathways recently viewed and UI state
+				"mobile-mode",
+				"history-stack",
+				"history-stack-groupUid",
 			],
 			onAccept: function (): void {
 				window.CookieControl.preferenceCookies = true;
