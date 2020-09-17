@@ -51,4 +51,32 @@ describe("cookie-control-config", () => {
 			});
 		}
 	);
+
+	it.each([
+		["preferenceCookies", true, "onAccept", 0],
+		["preferenceCookies", false, "onRevoke", 0],
+		["analyticsCookies", true, "onAccept", 1],
+		["analyticsCookies", false, "onRevoke", 1],
+	])(
+		"should set CookieControl.%s variable to %s %s",
+		(
+			variableName: string,
+			boolVal: boolean,
+			methodName: string,
+			index: number
+		) => {
+			const cookieTypeConfig = cookieControlConfig.optionalCookies?.[index];
+
+			if (cookieTypeConfig) {
+				const method = cookieTypeConfig[methodName as "onRevoke" | "onAccept"];
+				if (method) method();
+			}
+
+			expect(
+				window.CookieControl[
+					variableName as "preferenceCookies" | "analyticsCookies"
+				]
+			).toEqual(boolVal);
+		}
+	);
 });
