@@ -40,20 +40,54 @@ Loading directly via the CDN is the easiest and most convenenient way to include
 
 > using the CDN adds an extra HTTP request, so adds a slight performance overhead. Importing the module version (see the [import](#import) section below) is a better option for projects with a module bundling system (for example with webpack).
 
-TODO - add CDN URLs
+Include the following script tag before your applications's JavaScript code. Cookie Banner injects itself automatically, so you don’t need an empty `<div id="global-nav-header"></div>` placeholder or similar (like you need with Global Nav)
+
+```html
+<script
+  src="//cdn.nice.org.uk/cookie-banner/cookie-banner.min.js"
+  type="text/javascript"
+></script>
+```
+
+Or, point to the alpha CDN for non-live environments:
+
+```html
+<script
+  src="//alpha-cdn.nice.org.uk/cookie-banner/cookie-banner.min.js"
+  type="text/javascript"
+></script>
+```
+
+> The CDN URL setup is similar to Global Nav, so you may wish to use a similar config setting in tandem with Octopus Deploy variable to configure the CDN for each environment. For example `CookieBannerScriptUrl` or similar. Often we use the alpha CDN for dev and test and the live CDN for alpha and live.
 
 ### Import
 
-Importing the cookie banner as a module allows integrating it into your code base and build. This means you have more control over how the cookie banner is loaded. The downside is you fix the version in your package.json so you need a release to update to a newer version of the cookie banner.
+:warning: We haven't implemented a module import yet: shout if you think this would be useful.
 
-TODO
+~~Importing the cookie banner as a module allows integrating it into your code base and build. This means you have more control over how the cookie banner is loaded. The downside is you fix the version in your package.json so you need a release to update to a newer version of the cookie banner.~~
 
 ### Integrate with your application
 
 There are 2 main ways of hooking into the cookie banner to integrate it into your application:
 
-- via Civic's Cookie Control plugin's methods for example, `CookieControl.getCategoryConsent(0)`
-- or via `dataLayer` events in Google Tag Manager.
+- via JavaScript variables
+- via `dataLayer` events in Google Tag Manager.
+
+#### JavaScript variables
+
+The cookie banner provides JavaScript variables to indicate cookie consent. Use these variables to check for consent in your application before you set non-essential cookies.
+
+There are variables for both preference and analytics cookies. Essential cookies are exempt from explicit consent, so don't have a corresponding JavaScript variable. Analytics cookies _should_ be set via Google Tag Manager so your application's code will _probably_ just need to check for preference cookies.
+
+Make sure you've included the cookie banner script before your application's code. This ensures that the cookie banner has loaded and made the JavaScript variables available. Then use the boolean `CookieControl.preferenceCookies` variable (or `CookieControl.analyticsCookies`) to check for consent. For example:
+
+```js
+if (CookieControl.preferenceCookies) {
+  // Set a cookie
+}
+```
+
+> Note: you _could_ hook into the Cookie Control plugin's public methods directly, for example `CookieControl.getCategoryConsent(0)`. However, we don't recommend this - please use the variables defined above.
 
 #### `datalayer` events
 
@@ -64,7 +98,7 @@ On load:
 ```js
 {
 	event: "cookie.load",
-	preferencesCookies: boolean,
+	preferenceCookies: boolean,
 	analyticsCookies: boolean,
 }
 ```
@@ -74,7 +108,7 @@ When preference cookies are accepted/revoked:
 ```js
 {
 	event: "cookie.preferences.accept", // or "cookie.preferences.revoke",
-	preferencesCookies: true, // or false,
+	preferenceCookies: true, // or false,
 }
 ```
 

@@ -15,6 +15,9 @@ export interface CookieControl {
 	changeCategory: (index: number, grantConsent: boolean) => void;
 	toggleCategory: (index: number) => void;
 	getCategoryConsent: (index: number) => boolean;
+	// Custom properties
+	preferenceCookies: boolean;
+	analyticsCookies: boolean;
 }
 
 interface GeoInfo {
@@ -141,4 +144,15 @@ export interface CookieControlConfig {
 		}[];
 		text?: CookieControlText;
 	}[];
+}
+
+/**
+ * The type of the cookie object that the Cookie Control plugin stores
+ */
+export interface CookieControlCookie {
+	optionalCookies: {
+		preferences?: "accepted" | "revoked";
+		analytics?: "accepted" | "revoked";
+	};
+	// There are other properties like necessaryCookies, consentDate etc but we don't need them...
 }

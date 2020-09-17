@@ -5,16 +5,18 @@ export const cookieControlConfig: CookieControlConfig = {
 	product: "PRO_MULTISITE",
 	onLoad: function (): void {
 		// We need the try/catch because on first load, when the cookie doesn't exist then getCategoryConsent errors
-		let preferencesCookies = false;
+		let preferenceCookies = false;
 		let analyticsCookies = false;
 		try {
-			preferencesCookies = window.CookieControl.getCategoryConsent(0);
+			preferenceCookies = window.CookieControl.getCategoryConsent(0);
 			analyticsCookies = window.CookieControl.getCategoryConsent(1);
 		} catch {
 		} finally {
+			window.CookieControl.analyticsCookies = analyticsCookies;
+			window.CookieControl.preferenceCookies = preferenceCookies;
 			window.dataLayer.push({
 				event: "cookie.load",
-				preferencesCookies,
+				preferenceCookies,
 				analyticsCookies,
 			});
 		}
@@ -61,15 +63,17 @@ export const cookieControlConfig: CookieControlConfig = {
 				"NICE_guidanceList_*",
 			],
 			onAccept: function (): void {
+				window.CookieControl.preferenceCookies = true;
 				window.dataLayer.push({
 					event: "cookie.preferences.accept",
-					preferencesCookies: true,
+					preferenceCookies: true,
 				});
 			},
 			onRevoke: function (): void {
+				window.CookieControl.preferenceCookies = false;
 				window.dataLayer.push({
 					event: "cookie.preferences.revoke",
-					preferencesCookies: false,
+					preferenceCookies: false,
 				});
 			},
 		},
@@ -89,12 +93,14 @@ export const cookieControlConfig: CookieControlConfig = {
 				"_vis*",
 			],
 			onAccept: function (): void {
+				window.CookieControl.analyticsCookies = true;
 				window.dataLayer.push({
 					event: "cookie.analytics.accept",
 					analyticsCookies: true,
 				});
 			},
 			onRevoke: function (): void {
+				window.CookieControl.analyticsCookies = false;
 				window.dataLayer.push({
 					event: "cookie.analytics.revoke",
 					analyticsCookies: false,
