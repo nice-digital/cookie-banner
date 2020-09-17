@@ -18,14 +18,14 @@ describe("cookie-control-config", () => {
 		expect(window.dataLayer).toHaveLength(1);
 		expect(window.dataLayer[0]).toEqual({
 			event: "cookie.load",
-			preferencesCookies: true,
+			preferenceCookies: true,
 			analyticsCookies: false,
 		});
 	});
 
 	it.each([
-		["preferences.accept", "onAccept", "preferencesCookies", true, 0],
-		["preferences.revoke", "onRevoke", "preferencesCookies", false, 0],
+		["preferences.accept", "onAccept", "preferenceCookies", true, 0],
+		["preferences.revoke", "onRevoke", "preferenceCookies", false, 0],
 		["analytics.accept", "onAccept", "analyticsCookies", true, 1],
 		["analytics.revoke", "onRevoke", "analyticsCookies", false, 1],
 	])(
