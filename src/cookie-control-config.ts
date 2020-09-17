@@ -45,6 +45,8 @@ export const cookieControlConfig: CookieControlConfig = {
 		"downloadopen",
 		// NICE.Boostrap scroll position
 		"ud",
+		// Pathways XML cache
+		"/pathways/*",
 	],
 	optionalCookies: [
 		{
@@ -59,6 +61,10 @@ export const cookieControlConfig: CookieControlConfig = {
 				"HoistSearches",
 				// Guidance list: Preference for applied filters
 				"NICE_guidanceList_*",
+				// Pathways recently viewed and UI state
+				"mobile-mode",
+				"history-stack",
+				"history-stack-groupUid",
 			],
 			onAccept: function (): void {
 				window.dataLayer.push({

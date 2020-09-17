@@ -21,6 +21,7 @@ Object {
     "documentReferrer",
     "downloadopen",
     "ud",
+    "/pathways/*",
   ],
   "onLoad": [Function],
   "optionalCookies": Array [
@@ -29,6 +30,9 @@ Object {
         "TutorialVisible",
         "HoistSearches",
         "NICE_guidanceList_*",
+        "mobile-mode",
+        "history-stack",
+        "history-stack-groupUid",
       ],
       "description": "These cookies remember information that changes the way our website behaves or looks, like your preferred language or the region that you are in.",
       "label": "Preferences",
