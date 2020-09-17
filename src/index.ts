@@ -34,14 +34,17 @@ const createPlaceholderCookieControl = () => {
 	} as CookieControl;
 };
 
-export const loadCookieControl = async (): Promise<void> => {
+export const loadCookieControl = (): void => {
 	ensureDataLayer();
 
 	createPlaceholderCookieControl();
 
-	await loadjs("https://cc.cdn.civiccomputing.com/9/cookieControl-9.x.min.js", {
-		returnPromise: true,
+	loadjs(
+		"https://cc.cdn.civiccomputing.com/9/cookieControl-9.x.min.js",
+		"cookie-control"
+	);
+
+	loadjs.ready("cookie-control", () => {
+		window.CookieControl.load(cookieControlConfig);
 	});
-	console.log(cookieControlConfig);
-	window.CookieControl.load(cookieControlConfig);
 };
