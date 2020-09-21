@@ -17,6 +17,7 @@ jest.mock("loadjs", () => {
 
 describe("Load cookie control tests", () => {
 	beforeEach(() => {
+		window.CookieControl = (null as unknown) as CookieControl;
 		jest.resetAllMocks();
 	});
 
