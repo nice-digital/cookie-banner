@@ -43,8 +43,6 @@ export const cookieControlConfig: CookieControlConfig = {
 		"downloadopen",
 		// NICE.Boostrap scroll position
 		"ud",
-		// Pathways XML cache
-		"/pathways/*",
 		// INTERNAL USE
 		// For InDev -> Consultations
 		"documentReferrer",
@@ -68,6 +66,8 @@ export const cookieControlConfig: CookieControlConfig = {
 				"mobile-mode",
 				"history-stack",
 				"history-stack-groupUid",
+				// Pathways XML cache, used by recently viewed
+				"%2Fpathways%2F*",
 			],
 			onAccept: function (): void {
 				window.dataLayer.push({
