@@ -50,6 +50,8 @@ export const cookieControlConfig: CookieControlConfig = {
 		"documentReferrer",
 		// Pathways authoring
 		"display-node-orders",
+		// Octopus Deploy
+		"Octopus*",
 	],
 	optionalCookies: [
 		{

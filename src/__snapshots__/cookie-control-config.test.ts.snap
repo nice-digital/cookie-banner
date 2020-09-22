@@ -30,6 +30,7 @@ Object {
     "/pathways/*",
     "documentReferrer",
     "display-node-orders",
+    "Octopus*",
   ],
   "onLoad": [Function],
   "optionalCookies": Array [
