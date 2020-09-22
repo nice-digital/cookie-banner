@@ -8,8 +8,8 @@ export const cookieControlConfig: CookieControlConfig = {
 		let preferenceCookies = false;
 		let analyticsCookies = false;
 		try {
-			preferenceCookies = window.CookieControl.getCategoryConsent(0);
-			analyticsCookies = window.CookieControl.getCategoryConsent(1);
+			preferenceCookies = window.CookieControl.getCategoryConsent(0) || false;
+			analyticsCookies = window.CookieControl.getCategoryConsent(1) || false;
 		} catch {
 		} finally {
 			window.CookieControl.analyticsCookies = analyticsCookies;

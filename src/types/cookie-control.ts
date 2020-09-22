@@ -14,7 +14,7 @@ export interface CookieControl {
 	deleteAll: () => void;
 	changeCategory: (index: number, grantConsent: boolean) => void;
 	toggleCategory: (index: number) => void;
-	getCategoryConsent: (index: number) => boolean;
+	getCategoryConsent: (index: number) => boolean | null;
 	// Custom properties
 	preferenceCookies: boolean;
 	analyticsCookies: boolean;
