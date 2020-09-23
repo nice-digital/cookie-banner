@@ -6,11 +6,7 @@ module.exports = {
 	},
 	preset: "ts-jest",
 	collectCoverage: process.env.TEAMCITY_VERSION ? true : false,
-	collectCoverageFrom: [
-		"src/**/*.{js,jsx,ts,tsx}",
-		"!**/node_modules/**",
-		"!src/graphql-fragments/**",
-	],
+	collectCoverageFrom: ["src/**/*.{js,jsx,ts,tsx}", "!**/node_modules/**"],
 	testResultsProcessor: "jest-teamcity-reporter",
 	moduleNameMapper: {
 		"\\.(css|less)$": "<rootDir>/__mocks__/styleMock.ts",

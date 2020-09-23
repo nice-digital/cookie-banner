@@ -18,14 +18,14 @@ describe("cookie-control-config", () => {
 		expect(window.dataLayer).toHaveLength(1);
 		expect(window.dataLayer[0]).toEqual({
 			event: "cookie.load",
-			preferencesCookies: true,
+			preferenceCookies: true,
 			analyticsCookies: false,
 		});
 	});
 
 	it.each([
-		["preferences.accept", "onAccept", "preferencesCookies", true, 0],
-		["preferences.revoke", "onRevoke", "preferencesCookies", false, 0],
+		["preferences.accept", "onAccept", "preferenceCookies", true, 0],
+		["preferences.revoke", "onRevoke", "preferenceCookies", false, 0],
 		["analytics.accept", "onAccept", "analyticsCookies", true, 1],
 		["analytics.revoke", "onRevoke", "analyticsCookies", false, 1],
 	])(
@@ -49,6 +49,34 @@ describe("cookie-control-config", () => {
 				event: `cookie.${eventName}`,
 				[cookieType]: boolVal,
 			});
+		}
+	);
+
+	it.each([
+		["preferenceCookies", true, "onAccept", 0],
+		["preferenceCookies", false, "onRevoke", 0],
+		["analyticsCookies", true, "onAccept", 1],
+		["analyticsCookies", false, "onRevoke", 1],
+	])(
+		"should set CookieControl.%s variable to %s %s",
+		(
+			variableName: string,
+			boolVal: boolean,
+			methodName: string,
+			index: number
+		) => {
+			const cookieTypeConfig = cookieControlConfig.optionalCookies?.[index];
+
+			if (cookieTypeConfig) {
+				const method = cookieTypeConfig[methodName as "onRevoke" | "onAccept"];
+				if (method) method();
+			}
+
+			expect(
+				window.CookieControl[
+					variableName as "preferenceCookies" | "analyticsCookies"
+				]
+			).toEqual(boolVal);
 		}
 	);
 });
