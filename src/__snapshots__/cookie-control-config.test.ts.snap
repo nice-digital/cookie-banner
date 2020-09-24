@@ -40,7 +40,7 @@ Object {
         "mobile-mode",
         "history-stack",
         "history-stack-groupUid",
-        "%2Fpathways%2F*",
+        "history-stack-details",
       ],
       "description": "These cookies remember information that changes the way our website behaves or looks, like your preferred layout or previously viewed pages.",
       "label": "Preference cookies",

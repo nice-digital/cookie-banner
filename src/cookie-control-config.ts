@@ -66,8 +66,7 @@ export const cookieControlConfig: CookieControlConfig = {
 				"mobile-mode",
 				"history-stack",
 				"history-stack-groupUid",
-				// Pathways XML cache, used by recently viewed
-				"%2Fpathways%2F*",
+				"history-stack-details",
 			],
 			onAccept: function (): void {
 				window.dataLayer.push({
