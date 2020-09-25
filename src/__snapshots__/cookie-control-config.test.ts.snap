@@ -10,6 +10,7 @@ Object {
     "fontFamily": "Lato,'Helvetica Neue',Helvetica,Arial,sans-serif",
     "removeAbout": true,
   },
+  "encodeCookie": true,
   "initialState": "box",
   "necessaryCookies": Array [
     "AWSELB",
