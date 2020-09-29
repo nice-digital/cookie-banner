@@ -3,15 +3,19 @@
 exports[`cookie-control-config should match snapshot 1`] = `
 Object {
   "accessibility": Object {
-    "highlightFocus": true,
+    "highlightFocus": false,
   },
   "apiKey": "843970763414bd3ac1229c12767f5e7fab9ef68c",
   "branding": Object {
+    "backgroundColor": "#fff",
+    "fontColor": "#0e0e0e",
     "fontFamily": "Lato,'Helvetica Neue',Helvetica,Arial,sans-serif",
+    "fontSize": "1rem",
     "removeAbout": true,
+    "removeIcon": true,
   },
   "encodeCookie": true,
-  "initialState": "box",
+  "initialState": "open",
   "necessaryCookies": Array [
     "AWSELB",
     "AWSELBCORS",
@@ -66,23 +70,23 @@ Object {
   ],
   "position": "left",
   "product": "PRO_MULTISITE",
-  "rejectButton": false,
-  "settingsStyle": "link",
+  "rejectButton": true,
   "statement": Object {
     "description": "For more information, view our",
-    "name": "cookie statement",
+    "name": "cookie statement.",
     "updated": "17/08/2020",
     "url": "https://www.nice.org.uk/terms-and-conditions#cookies",
   },
   "text": Object {
-    "accept": "Accept all cookies",
     "acceptSettings": "Accept all cookies",
+    "closeLabel": "Close cookie banner",
     "intro": "Cookies are files saved on your phone, tablet or computer when you visit a website.
 We use cookies to store information about how you use the NICE website and services, such as the pages you visit.",
     "necessaryDescription": "These cookies enable basic functions like page navigation and access to secure areas of the website. Our website cannot function properly without these cookies and they can only be deactivated by changing your browser preferences.",
     "necessaryTitle": "Essential cookies",
     "notifyDescription": "We store cookies on your device to make our site work and to help us understand how the site is being used.",
     "notifyTitle": "Cookies on the NICE website and services",
+    "rejectSettings": "Reject cookies",
     "settings": "Manage cookies",
     "title": "Cookies on the NICE website and services",
   },

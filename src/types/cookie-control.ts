@@ -73,7 +73,7 @@ export interface CookieControlConfig {
 	// Appearance and behaviour
 	initialState?: "open" | "closed" | "notify" | "top" | "box";
 	notifyOnce?: boolean;
-	rejectButton?: false;
+	rejectButton?: boolean;
 	layout?: "slideout" | "popup";
 	position?: "left" | "right";
 	theme?: "light" | "dark";
