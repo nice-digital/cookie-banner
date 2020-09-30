@@ -127,12 +127,11 @@ export const cookieControlConfig: CookieControlConfig = {
 	],
 
 	// Styling
-	initialState: "box",
+	initialState: "open",
 	position: "left",
 	theme: "light",
-	rejectButton: false,
+	rejectButton: true,
 	toggleType: "slider",
-	settingsStyle: "link",
 
 	// Text
 	text: {
@@ -146,14 +145,15 @@ export const cookieControlConfig: CookieControlConfig = {
 		necessaryTitle: "Essential cookies",
 		necessaryDescription:
 			"These cookies enable basic functions like page navigation and access to secure areas of the website. Our website cannot function properly without these cookies and they can only be deactivated by changing your browser preferences.",
-		accept: "Accept all cookies",
 		acceptSettings: "Accept all cookies",
+		rejectSettings: "Reject cookies",
+		closeLabel: "Close cookie banner",
 	},
 
 	// Statement
 	statement: {
 		description: "For more information, view our",
-		name: "cookie statement",
+		name: "cookie statement.",
 		url: "https://www.nice.org.uk/cookies",
 		updated: "17/08/2020",
 	},
@@ -162,10 +162,15 @@ export const cookieControlConfig: CookieControlConfig = {
 	branding: {
 		fontFamily: "Lato,'Helvetica Neue',Helvetica,Arial,sans-serif",
 		removeAbout: true,
+		removeIcon: true,
+		fontSize: "1rem",
+		fontColor: "#0e0e0e",
+		backgroundColor: "#fff",
 	},
 
 	// Accessibility
 	accessibility: {
-		highlightFocus: true,
+		// We set our own focus styles
+		highlightFocus: false,
 	},
 };

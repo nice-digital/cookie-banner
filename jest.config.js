@@ -9,6 +9,6 @@ module.exports = {
 	collectCoverageFrom: ["src/**/*.{js,jsx,ts,tsx}", "!**/node_modules/**"],
 	testResultsProcessor: "jest-teamcity-reporter",
 	moduleNameMapper: {
-		"\\.(css|less)$": "<rootDir>/__mocks__/styleMock.ts",
+		"\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.ts",
 	},
 };

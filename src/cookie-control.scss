@@ -1,0 +1,125 @@
+@import '~@nice-digital/nds-core/scss/core.scss';
+
+@mixin focus-ring {
+  // Unfortunately we can't use @include nds-default-focus-style; because we
+  // have to use important to override Cookie Control's styling
+  outline: rem($nds-spacing-x-small) solid $nds-colour-focus !important;
+}
+
+#ccc {
+  #ccc-module {
+    animation-duration: 0.001ms !important;
+  }
+
+  #ccc-close {
+    &:focus {
+      @include focus-ring;
+    }
+  }
+
+  #ccc-title {
+    font-size: rem(nds-get-font-size(h4)) !important;
+  }
+
+  h3 {
+    font-size: rem(nds-get-font-size(h5)) !important;
+  }
+
+  #ccc-content {
+    a {
+      color: $nds-colour-link !important;
+
+      span {
+        color: $nds-colour-link !important;
+      }
+
+      &:visited {
+        color: $nds-colour-link-visited !important;
+      }
+
+      &:hover {
+        color: $nds-colour-link-hover !important;
+      }
+
+      &:focus {
+        @include focus-ring;
+      }
+    }
+  }
+
+  // Cookie Control uses icons with a fixed width, but we hide the external link one (see below)
+  // So we want to also remove the width it leaves
+  .ccc-svg-element {
+    width: auto !important;
+
+    // See https://designnotes.blog.gov.uk/2016/11/28/removing-the-external-link-icon-from-gov-uk/
+    [data-icon='external-link'] {
+      display: none;
+    }
+  }
+
+  // Reject/accept buttons
+  .ccc-notify-button {
+    border-radius: 0 !important;
+    padding: em($nds-spacing-small $nds-spacing-medium) !important;
+
+    &:focus {
+      @include focus-ring;
+    }
+  }
+
+  // Accept button
+  .ccc-accept-button {
+    background: $nds-colour-btn-cta !important;
+    border: em(1px) solid $nds-colour-btn-cta-text !important;
+
+    span {
+      color: $nds-colour-btn-cta-text !important;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: $nds-colour-btn-cta-hover !important;
+    }
+  }
+
+  // Reject button
+  .ccc-reject-button {
+    background: $nds-colour-btn-inverse !important;
+    border: em(1px) solid $nds-colour-btn-inverse-text !important;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: $nds-colour-btn-inverse-hover !important;
+    }
+  }
+
+  .checkbox-toggle {
+    background: $nds-colour-nice-dark-grey !important;
+    border-color: $nds-colour-nice-dark-grey !important;
+
+    &:focus-within {
+      @include focus-ring;
+      outline-offset: rem($nds-spacing-xx-small);
+
+      .checkbox-toggle-input:focus ~ .checkbox-toggle-toggle {
+        outline: none !important;
+      }
+    }
+
+    .checkbox-toggle-input:focus ~ .checkbox-toggle-toggle {
+      @include focus-ring;
+    }
+
+    .checkbox-toggle-toggle {
+      background: $nds-colour-nice-white !important;
+    }
+
+    .checkbox-toggle-on,
+    .checkbox-toggle-off {
+      color: $nds-colour-nice-white !important;
+    }
+  }
+}

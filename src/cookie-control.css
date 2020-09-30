@@ -1,8 +1,0 @@
-#ccc-notify,
-#ccc .ccc-notify-button {
-	border-radius: 0 !important;
-}
-
-.ccc-notify-text {
-	width: 100%; /* To fix IE11 layout bug */
-}

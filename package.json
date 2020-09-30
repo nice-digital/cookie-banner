@@ -41,6 +41,7 @@
     "lib"
   ],
   "devDependencies": {
+    "@nice-digital/nds-core": "^1.0.23-alpha.0",
     "@types/jest": "^26.0.10",
     "@types/js-cookie": "^2.2.6",
     "@types/loadjs": "^4.0.0",
@@ -56,6 +57,8 @@
     "jest": "^26.4.2",
     "jest-teamcity-reporter": "^0.9.0",
     "prettier": "^2.0.5",
+    "sass": "^1.26.11",
+    "sass-loader": "^10.0.2",
     "style-loader": "^1.2.1",
     "ts-jest": "^26.3.0",
     "ts-loader": "^8.0.2",
