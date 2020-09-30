@@ -114,6 +114,14 @@ export const cookieControlConfig: CookieControlConfig = {
 					event: "cookie.analytics.revoke",
 					analyticsCookies: false,
 				});
+
+				// Cookie Control doesn't handle local storage automatically, so we have to tidy analytics local storage ourselves
+				window.localStorage.removeItem("vwoSn");
+
+				// HotJar uses local storage with keys starting _hj
+				Object.keys(window.localStorage)
+					.filter((key) => /^_hj/.test(key))
+					.forEach((key) => window.localStorage.removeItem(key));
 			},
 		},
 	],
