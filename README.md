@@ -169,3 +169,18 @@ dotnet pack NICE.CookieBanner.CDN.csproj -o publish /p:Version=1.2.3-r1a2b3c
 Where the version number can be any valid [SemVer build number](https://octopus.com/blog/semver2) compatible with Octopus Deploy. This version number will be the build number when TeamCity creates this build artifact, i.e. `/p:Version=%build.number%`
 
 > Note: you'll need the .NET Core SDK installed. We use `dotnet pack` (and not NuGet.exe) to pack so we can run on both Windows and Linux
+
+## Adding a new cookie
+
+Implementing new features sometimes requires new cookies. All cookies should be in the cookie statement and within the cookie banner config. Take the following steps when identifying a new cookie:
+
+1. Decide on the type of cookie: essential, preference, or analytics. Note: the ICO refers to 'strictly necessary' cookie and the guidance says "it is important to remember that what is ‘strictly necessary’ should be assessed from the point of view of the user or subscriber, not your own". See the [What is the ‘strictly necessary’ exemption?](https://ico.org.uk/for-organisations/guide-to-pecr/guidance-on-the-use-of-cookies-and-similar-technologies/what-are-the-rules-on-cookies-and-similar-technologies/#rules9) section in the ICO guidance.
+2. Decide on an appropriate expiry, see the [How long should our cookies last?](https://ico.org.uk/for-organisations/guide-to-pecr/guidance-on-the-use-of-cookies-and-similar-technologies/how-do-we-comply-with-the-cookie-rules/#comply20) section in the ICO guidance.
+3. Add the new cookie to the Cookie List confluence page in the appropriate section
+4. Submit a pull request to this cookie-banner repository with the following:
+   1. The new cookie in the appropriate place in the cookie control config
+   2. Change the statement date in the cookie control config (this prompts users to re-consent now the policy has changed)
+5. Follow the 'Integrate with your application' section above
+6. Get the policy amended to add the new cookie - you may need to speak to comms
+7. Release the cookie banner
+8. Release your application
