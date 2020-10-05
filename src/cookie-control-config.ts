@@ -60,8 +60,7 @@ export const cookieControlConfig: CookieControlConfig = {
 		"relevant-highlight",
 		"irrelevant-highlight",
 		"dedupe-view",
-		"text-highlighter-hide"
-
+		"text-highlighter-hide",
 	],
 	optionalCookies: [
 		{
