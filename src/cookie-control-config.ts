@@ -51,6 +51,17 @@ export const cookieControlConfig: CookieControlConfig = {
 		"documentReferrer",
 		// Pathways authoring
 		"display-node-orders",
+		//EPPI
+		"data-extraction-fixed-tables",
+		"data-extraction-input-vertical",
+		"browser-warning-shown",
+		"compact",
+		"dedupe-show-details",
+		"relevant-highlight",
+		"irrelevant-highlight",
+		"dedupe-view",
+		"text-highlighter-hide"
+
 	],
 	optionalCookies: [
 		{
