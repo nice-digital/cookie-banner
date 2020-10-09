@@ -63,13 +63,12 @@
     "ts-jest": "^26.3.0",
     "ts-loader": "^8.0.2",
     "typescript": "^3.9.7",
+    "val-loader": "^2.1.1",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.1.2"
   },
   "dependencies": {
-    "js-cookie": "^2.2.1",
-    "loadjs": "^4.2.0"
   }
 }

@@ -10,6 +10,10 @@ module.exports = {
 	module: {
 		rules: [
 			{
+				test: /cookie-control\.ts/,
+				use: "val-loader",
+			},
+			{
 				test: /\.tsx?$/,
 				use: "ts-loader",
 				exclude: /node_modules/,
