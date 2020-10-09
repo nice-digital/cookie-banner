@@ -43,8 +43,6 @@
   "devDependencies": {
     "@nice-digital/nds-core": "^1.0.23-alpha.0",
     "@types/jest": "^26.0.10",
-    "@types/js-cookie": "^2.2.6",
-    "@types/loadjs": "^4.0.0",
     "@typescript-eslint/eslint-plugin": "^3.9.1",
     "@typescript-eslint/parser": "^3.9.1",
     "clean-webpack-plugin": "^3.0.0",
@@ -69,6 +67,5 @@
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.1.2"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
