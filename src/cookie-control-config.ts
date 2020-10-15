@@ -51,6 +51,12 @@ export const cookieControlConfig: CookieControlConfig = {
 		"documentReferrer",
 		// Pathways authoring
 		"display-node-orders",
+		// Pharmascan
+		"evercookie_cache",
+		"evercookie_etag",
+		"evercookie_png",
+		".ukps",
+		".ukpsLease"
 	],
 	optionalCookies: [
 		{

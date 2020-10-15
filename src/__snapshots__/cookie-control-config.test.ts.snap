@@ -34,6 +34,11 @@ Object {
     "ud",
     "documentReferrer",
     "display-node-orders",
+    "evercookie_cache",
+    "evercookie_etag",
+    "evercookie_png",
+    ".ukps",
+    ".ukpsLease",
   ],
   "onLoad": [Function],
   "optionalCookies": Array [
