@@ -43,6 +43,11 @@ Object {
     "irrelevant-highlight",
     "dedupe-view",
     "text-highlighter-hide",
+    "evercookie_cache",
+    "evercookie_etag",
+    "evercookie_png",
+    ".ukps",
+    ".ukpsLease",
   ],
   "onLoad": [Function],
   "optionalCookies": Array [
@@ -83,7 +88,7 @@ Object {
   "statement": Object {
     "description": "For more information, view our",
     "name": "cookie statement.",
-    "updated": "17/08/2020",
+    "updated": "15/10/2020",
     "url": "https://www.nice.org.uk/cookies",
   },
   "text": Object {
