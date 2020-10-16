@@ -66,7 +66,7 @@ export const cookieControlConfig: CookieControlConfig = {
 		"evercookie_etag",
 		"evercookie_png",
 		".ukps",
-		".ukpsLease"
+		".ukpsLease",
 	],
 	optionalCookies: [
 		{
