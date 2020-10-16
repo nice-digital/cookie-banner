@@ -46,6 +46,7 @@ describe("Load cookie control tests", () => {
 		expect(window.CookieControl).toStrictEqual({
 			analyticsCookies: false,
 			preferenceCookies: false,
+			marketingCookies: false,
 		});
 	});
 
@@ -54,6 +55,7 @@ describe("Load cookie control tests", () => {
 			optionalCookies: {
 				analytics: "revoked",
 				preferences: "revoked",
+				marketing: "revoked",
 			},
 		}));
 
@@ -62,6 +64,7 @@ describe("Load cookie control tests", () => {
 		expect(window.CookieControl).toStrictEqual({
 			analyticsCookies: false,
 			preferenceCookies: false,
+			marketingCookies: false,
 		});
 	});
 
@@ -70,6 +73,7 @@ describe("Load cookie control tests", () => {
 			optionalCookies: {
 				analytics: "accepted",
 				preferences: "accepted",
+				marketing: "accepted",
 			},
 		}));
 
@@ -78,6 +82,7 @@ describe("Load cookie control tests", () => {
 		expect(window.CookieControl).toStrictEqual({
 			analyticsCookies: true,
 			preferenceCookies: true,
+			marketingCookies: true,
 		});
 	});
 });

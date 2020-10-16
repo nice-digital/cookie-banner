@@ -132,4 +132,47 @@
       color: $nds-colour-nice-white !important;
     }
   }
+
+  .ccc-alert {
+    background: $nds-colour-nice-grey-3 !important;
+    border: 1px solid $nds-colour-nice-grey-2 !important;
+    border-radius: 0 !important;
+
+    > :last-child {
+      margin-bottom: 0 !important;
+    }
+
+    .ccc-alert-break {
+      display: none !important;
+    }
+
+    // We don't really use icons anywhere so just hide it
+    .ccc-alert-icon {
+      display: none !important;
+    }
+  }
+
+  .ccc-vendor-reveal {
+    border-style: solid !important;
+    opacity: 1 !important;
+  }
+
+  .third-party-cookie-icon {
+    display: none !important;
+  }
+
+  .optional-vendor-heading {
+    font-size: rem(nds-get-font-size(h6)) !important;
+    margin-bottom: rem($nds-spacing-small) !important;
+    padding-left: 0 !important;
+    text-decoration: none !important;
+  }
+
+  .optional-vendor-content {
+    padding-left: 0 !important;
+
+    > :first-child {
+      margin-top: 0 !important;
+    }
+  }
 }

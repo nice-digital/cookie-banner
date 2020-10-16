@@ -8,17 +8,21 @@ export const cookieControlConfig: CookieControlConfig = {
 		// We need the try/catch because on first load, when the cookie doesn't exist then getCategoryConsent errors
 		let preferenceCookies = false;
 		let analyticsCookies = false;
+		let marketingCookies = false;
 		try {
 			preferenceCookies = window.CookieControl.getCategoryConsent(0) || false;
 			analyticsCookies = window.CookieControl.getCategoryConsent(1) || false;
+			marketingCookies = window.CookieControl.getCategoryConsent(2) || false;
 		} catch {
 		} finally {
 			window.CookieControl.analyticsCookies = analyticsCookies;
 			window.CookieControl.preferenceCookies = preferenceCookies;
+			window.CookieControl.marketingCookies = marketingCookies;
 			window.dataLayer.push({
 				event: "cookie.load",
 				preferenceCookies,
 				analyticsCookies,
+				marketingCookies,
 			});
 		}
 	},
@@ -134,6 +138,47 @@ export const cookieControlConfig: CookieControlConfig = {
 					.forEach((key) => window.localStorage.removeItem(key));
 			},
 		},
+		{
+			name: "marketing",
+			label: "Marketing and advertising cookies",
+			description:
+				"We use Google Ads to serve adverts to users on Google. It uses cookies to help us measure how many times people click on these ads and interact with our site.",
+			cookies: [
+				// Conversion linker https://support.google.com/tagmanager/answer/7549390?hl=en
+				"_gcl_dc",
+				"_gcl_aw",
+				"_gcl_au",
+			],
+			thirdPartyCookies: [
+				{
+					name: "Google Ads",
+					optOutLink: "https://adssettings.google.com/",
+				},
+			],
+			vendors: [
+				{
+					name: "Google Ads",
+					description:
+						"Google Ads serves adverts on Google products and services. It uses cookies help to make advertising more effective. Without cookies, it’s harder for an advertiser to reach its audience, or to know how many ads were shown and how many clicks they received.",
+					thirdPartyCookies: true,
+					url: "https://policies.google.com/technologies/ads",
+				},
+			],
+			onAccept: function (): void {
+				window.CookieControl.marketingCookies = true;
+				window.dataLayer.push({
+					event: "cookie.marketing.accept",
+					marketingCookies: true,
+				});
+			},
+			onRevoke: function (): void {
+				window.CookieControl.marketingCookies = false;
+				window.dataLayer.push({
+					event: "cookie.marketing.revoke",
+					marketingCookies: false,
+				});
+			},
+		},
 	],
 
 	// Styling
@@ -165,7 +210,7 @@ export const cookieControlConfig: CookieControlConfig = {
 		description: "For more information, view our",
 		name: "cookie statement.",
 		url: "https://www.nice.org.uk/cookies",
-		updated: "17/08/2020",
+		updated: "16/10/2020",
 	},
 
 	// Branding
