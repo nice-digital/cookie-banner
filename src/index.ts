@@ -26,12 +26,15 @@ const createPlaceholderCookieControl = () => {
 	const analyticsCookies =
 			cookieControlCookie?.optionalCookies.analytics === "accepted",
 		preferenceCookies =
-			cookieControlCookie?.optionalCookies.preferences === "accepted";
+			cookieControlCookie?.optionalCookies.preferences === "accepted",
+		marketingCookies =
+			cookieControlCookie?.optionalCookies.marketing === "accepted";
 
 	window.CookieControl = window.CookieControl || ({} as CookieControl);
 
 	window.CookieControl.analyticsCookies = analyticsCookies;
 	window.CookieControl.preferenceCookies = preferenceCookies;
+	window.CookieControl.marketingCookies = marketingCookies;
 };
 
 export const loadCookieControl = (): void => {

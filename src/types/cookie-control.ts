@@ -18,6 +18,7 @@ export interface CookieControl {
 	// Custom properties
 	preferenceCookies: boolean;
 	analyticsCookies: boolean;
+	marketingCookies: boolean;
 }
 
 interface GeoInfo {
@@ -57,6 +58,16 @@ export interface CookieControlPurpose {
 	onAccept?: () => void;
 	onRevoke?: () => void;
 	recommendedState?: boolean;
+	thirdPartyCookies?: {
+		name: string;
+		optOutLink: string;
+	}[];
+	vendors?: {
+		name: string;
+		description: string;
+		url: string;
+		thirdPartyCookies: boolean;
+	}[];
 }
 
 export interface CookieControlConfig {
@@ -153,6 +164,7 @@ export interface CookieControlCookie {
 	optionalCookies: {
 		preferences?: "accepted" | "revoked";
 		analytics?: "accepted" | "revoked";
+		marketing?: "accepted" | "revoked";
 	};
 	// There are other properties like necessaryCookies, consentDate etc but we don't need them...
 }
