@@ -107,7 +107,9 @@ export const cookieControlConfig: CookieControlConfig = {
 				"We use tools such as Google Analytics, Hotjar, VWO and Loop11 to help us anonymously measure how you use our websites. This allows us to make improvements based on our users' needs. These tools set cookies that store anonymised information about how you got to the site, and how you interact with the site.",
 			cookies: [
 				// Google Analytics
-				"_g*",
+				"_ga",
+				"_gat_UA-*",
+				"_gid",
 				// Hotjar
 				"_hj*",
 				"ajs_*",
@@ -145,9 +147,7 @@ export const cookieControlConfig: CookieControlConfig = {
 				"We use Google Ads to serve adverts to users on Google. It uses cookies to help us measure how many times people click on these ads and interact with our site.",
 			cookies: [
 				// Conversion linker https://support.google.com/tagmanager/answer/7549390?hl=en
-				"_gcl_dc",
-				"_gcl_aw",
-				"_gcl_au",
+				"_gcl_*",
 			],
 			thirdPartyCookies: [
 				{

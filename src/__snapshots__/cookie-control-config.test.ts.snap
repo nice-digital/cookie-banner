@@ -64,7 +64,9 @@ Object {
     },
     Object {
       "cookies": Array [
-        "_g*",
+        "_ga",
+        "_gat_UA-*",
+        "_gid",
         "_hj*",
         "ajs_*",
         "_vwo*",
@@ -78,9 +80,7 @@ Object {
     },
     Object {
       "cookies": Array [
-        "_gcl_dc",
-        "_gcl_aw",
-        "_gcl_au",
+        "_gcl_*",
       ],
       "description": "We use Google Ads to serve adverts to users on Google. It uses cookies to help us measure how many times people click on these ads and interact with our site.",
       "label": "Marketing and advertising cookies",
