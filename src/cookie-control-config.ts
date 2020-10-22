@@ -166,15 +166,15 @@ export const cookieControlConfig: CookieControlConfig = {
 				},
 			],
 			onAccept: function (): void {
-				window.CookieControl.marketingCookies = true;
-				window.dataLayer.push({
+				CookieControl.marketingCookies = true;
+				window.dataLayer?.push({
 					event: "cookie.marketing.accept",
 					marketingCookies: true,
 				});
 			},
 			onRevoke: function (): void {
-				window.CookieControl.marketingCookies = false;
-				window.dataLayer.push({
+				CookieControl.marketingCookies = false;
+				window.dataLayer?.push({
 					event: "cookie.marketing.revoke",
 					marketingCookies: false,
 				});
