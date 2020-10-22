@@ -104,7 +104,7 @@ export const cookieControlConfig: CookieControlConfig = {
 			name: "analytics",
 			label: "Website usage cookies",
 			description:
-				"We use tools such as Google Analytics, Hotjar, VWO and Loop11 to help us anonymously measure how you use our websites. This allows us to make improvements based on our users' needs. These tools set cookies that store anonymised information about how you got to the site, and how you interact with the site.",
+				"We use tools such as Google Analytics, Hotjar, VWO and Loop11 to help us anonymously measure how you use our websites. This allows us to make improvements based on our users' needs.\n\nThese tools set cookies that store anonymised information about how you got to the site, and how you interact with the site.",
 			cookies: [
 				// Google Analytics
 				"_ga",
@@ -144,24 +144,38 @@ export const cookieControlConfig: CookieControlConfig = {
 			name: "marketing",
 			label: "Marketing and advertising cookies",
 			description:
-				"We use Google Ads to serve adverts to users on Google. It uses cookies to help us measure how many times people click on these ads and interact with our site.",
+				"We use Google Ads and LinkedIn to show adverts on external sites to promote NICE services, events and content.\n\nThese services use cookies to help make advertising more effective. These cookies are used for things like showing relevant adverts based on website visits, preventing the same ad from continuously re-appearing, or by measuring how many times people click on these adverts.",
 			cookies: [
 				// Conversion linker https://support.google.com/tagmanager/answer/7549390?hl=en
 				"_gcl_*",
+				// LinkedIn: https://www.linkedin.com/legal/l/cookie-table#thirdparty
+				"li_fat_id",
 			],
 			thirdPartyCookies: [
 				{
 					name: "Google Ads",
 					optOutLink: "https://adssettings.google.com/",
 				},
+				{
+					name: "LinkedIn",
+					optOutLink:
+						"https://www.linkedin.com/help/linkedin/answer/62931/manage-advertising-preferences?lang=en",
+				},
 			],
 			vendors: [
 				{
 					name: "Google Ads",
 					description:
-						"Google Ads serves adverts on Google products and services. It uses cookies help to make advertising more effective. Without cookies, it’s harder for an advertiser to reach its audience, or to know how many ads were shown and how many clicks they received.",
+						"Google Ads serves adverts on Google products and services. It uses cookies to help to make advertising more effective.",
 					thirdPartyCookies: true,
 					url: "https://policies.google.com/technologies/ads",
+				},
+				{
+					name: "LinkedIn",
+					description:
+						"LinkedIn shows adverts when you browse LinkedIn products and services. It uses cookies to help to make advertising more effective.",
+					thirdPartyCookies: true,
+					url: "https://www.linkedin.com/legal/cookie-policy",
 				},
 			],
 			onAccept: function (): void {
