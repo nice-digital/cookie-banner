@@ -65,6 +65,12 @@ export const cookieControlConfig: CookieControlConfig = {
 		"irrelevant-highlight",
 		"dedupe-view",
 		"text-highlighter-hide",
+		// Pharmascan
+		"evercookie_cache",
+		"evercookie_etag",
+		"evercookie_png",
+		".ukps",
+		".ukpsLease",
 	],
 	optionalCookies: [
 		{
@@ -210,7 +216,7 @@ export const cookieControlConfig: CookieControlConfig = {
 		description: "For more information, view our",
 		name: "cookie statement.",
 		url: "https://www.nice.org.uk/cookies",
-		updated: "16/10/2020",
+		updated: "20/10/2020",
 	},
 
 	// Branding
