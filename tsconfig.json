@@ -4,7 +4,6 @@
     "lib": ["es6", "DOM"],
     "module": "CommonJS",
     "rootDir": "src",
-    "outDir": "lib",
     "sourceMap": true,
     "strict": true,
     "strictNullChecks": true,
@@ -12,7 +11,7 @@
     "noImplicitAny": true,
     "forceConsistentCasingInFileNames": true,
     "allowJs": true,
-    "declaration": true
+    "declaration": false
   },
   "exclude": ["node_modules", "lib", "src/cdn.ts"],
   "include": ["src"]
