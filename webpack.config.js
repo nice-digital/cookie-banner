@@ -15,12 +15,29 @@ module.exports = {
 			},
 			{
 				test: /\.tsx?$/,
-				use: "ts-loader",
+				loader: "ts-loader",
 				exclude: /node_modules/,
+				options: {
+					transpileOnly: true,
+				},
 			},
 			{
 				test: /\.s[ac]ss$/i,
-				use: ["style-loader", "css-loader", "sass-loader"],
+				use: [
+					"style-loader",
+					{
+						loader: "css-loader",
+						options: {
+							sourceMap: process.env.NODE_ENV !== "production",
+						},
+					},
+					{
+						loader: "sass-loader",
+						options: {
+							sourceMap: process.env.NODE_ENV !== "production",
+						},
+					},
+				],
 			},
 		],
 	},
