@@ -12,6 +12,11 @@
   }
 
   #ccc-close {
+    // Syndication sets default button styles so we need to override them here
+    background: none !important;
+    margin: 0 !important;
+    min-width: auto !important;
+
     &:focus {
       @include focus-ring;
     }
@@ -61,6 +66,7 @@
   // Reject/accept buttons
   .ccc-notify-button {
     border-radius: 0 !important;
+    height: auto !important; // Syndication has absolute height buttons
     padding: em($nds-spacing-small $nds-spacing-medium) !important;
 
     &:focus {
@@ -113,6 +119,10 @@
       @include focus-ring;
     }
 
+    .checkbox-toggle-label {
+      width: auto !important; // Syndication adds a width to labels
+    }
+
     .checkbox-toggle-toggle {
       background: $nds-colour-nice-white !important;
     }
@@ -120,6 +130,49 @@
     .checkbox-toggle-on,
     .checkbox-toggle-off {
       color: $nds-colour-nice-white !important;
+    }
+  }
+
+  .ccc-alert {
+    background: $nds-colour-nice-grey-3 !important;
+    border: 1px solid $nds-colour-nice-grey-2 !important;
+    border-radius: 0 !important;
+
+    > :last-child {
+      margin-bottom: 0 !important;
+    }
+
+    .ccc-alert-break {
+      display: none !important;
+    }
+
+    // We don't really use icons anywhere so just hide it
+    .ccc-alert-icon {
+      display: none !important;
+    }
+  }
+
+  .ccc-vendor-reveal {
+    border-style: solid !important;
+    opacity: 1 !important;
+  }
+
+  .third-party-cookie-icon {
+    display: none !important;
+  }
+
+  .optional-vendor-heading {
+    font-size: rem(nds-get-font-size(h6)) !important;
+    margin-bottom: rem($nds-spacing-small) !important;
+    padding-left: 0 !important;
+    text-decoration: none !important;
+  }
+
+  .optional-vendor-content {
+    padding-left: 0 !important;
+
+    > :first-child {
+      margin-top: 0 !important;
     }
   }
 }

@@ -9,17 +9,21 @@ export const cookieControlConfig: CookieControlConfig = {
 		// We need the try/catch because on first load, when the cookie doesn't exist then getCategoryConsent errors
 		let preferenceCookies = false;
 		let analyticsCookies = false;
+		let marketingCookies = false;
 		try {
 			preferenceCookies = CookieControl.getCategoryConsent(0) || false;
 			analyticsCookies = CookieControl.getCategoryConsent(1) || false;
+			marketingCookies = CookieControl.getCategoryConsent(2) || false;
 		} catch {
 		} finally {
 			CookieControl.analyticsCookies = analyticsCookies;
 			CookieControl.preferenceCookies = preferenceCookies;
+			CookieControl.marketingCookies = marketingCookies;
 			window.dataLayer?.push({
 				event: "cookie.load",
 				preferenceCookies,
 				analyticsCookies,
+				marketingCookies,
 			});
 		}
 	},
@@ -52,6 +56,16 @@ export const cookieControlConfig: CookieControlConfig = {
 		"documentReferrer",
 		// Pathways authoring
 		"display-node-orders",
+		//EPPI
+		"data-extraction-fixed-tables",
+		"data-extraction-input-vertical",
+		"browser-warning-shown",
+		"compact",
+		"dedupe-show-details",
+		"relevant-highlight",
+		"irrelevant-highlight",
+		"dedupe-view",
+		"text-highlighter-hide",
 	],
 	optionalCookies: [
 		{
@@ -94,7 +108,9 @@ export const cookieControlConfig: CookieControlConfig = {
 				"We use tools such as Google Analytics, Hotjar, VWO and Loop11 to help us anonymously measure how you use our websites. This allows us to make improvements based on our users' needs. These tools set cookies that store anonymised information about how you got to the site, and how you interact with the site.",
 			cookies: [
 				// Google Analytics
-				"_g*",
+				"_ga",
+				"_gat_UA-*",
+				"_gid",
 				// Hotjar
 				"_hj*",
 				"ajs_*",
@@ -123,6 +139,45 @@ export const cookieControlConfig: CookieControlConfig = {
 				Object.keys(window.localStorage)
 					.filter((key) => /^_hj/.test(key))
 					.forEach((key) => window.localStorage.removeItem(key));
+			},
+		},
+		{
+			name: "marketing",
+			label: "Marketing and advertising cookies",
+			description:
+				"We use Google Ads to serve adverts to users on Google. It uses cookies to help us measure how many times people click on these ads and interact with our site.",
+			cookies: [
+				// Conversion linker https://support.google.com/tagmanager/answer/7549390?hl=en
+				"_gcl_*",
+			],
+			thirdPartyCookies: [
+				{
+					name: "Google Ads",
+					optOutLink: "https://adssettings.google.com/",
+				},
+			],
+			vendors: [
+				{
+					name: "Google Ads",
+					description:
+						"Google Ads serves adverts on Google products and services. It uses cookies help to make advertising more effective. Without cookies, it’s harder for an advertiser to reach its audience, or to know how many ads were shown and how many clicks they received.",
+					thirdPartyCookies: true,
+					url: "https://policies.google.com/technologies/ads",
+				},
+			],
+			onAccept: function (): void {
+				window.CookieControl.marketingCookies = true;
+				window.dataLayer.push({
+					event: "cookie.marketing.accept",
+					marketingCookies: true,
+				});
+			},
+			onRevoke: function (): void {
+				window.CookieControl.marketingCookies = false;
+				window.dataLayer.push({
+					event: "cookie.marketing.revoke",
+					marketingCookies: false,
+				});
 			},
 		},
 	],
@@ -156,7 +211,7 @@ export const cookieControlConfig: CookieControlConfig = {
 		description: "For more information, view our",
 		name: "cookie statement.",
 		url: "https://www.nice.org.uk/cookies",
-		updated: "17/08/2020",
+		updated: "16/10/2020",
 	},
 
 	// Branding

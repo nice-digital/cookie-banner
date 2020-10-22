@@ -34,6 +34,15 @@ Object {
     "ud",
     "documentReferrer",
     "display-node-orders",
+    "data-extraction-fixed-tables",
+    "data-extraction-input-vertical",
+    "browser-warning-shown",
+    "compact",
+    "dedupe-show-details",
+    "relevant-highlight",
+    "irrelevant-highlight",
+    "dedupe-view",
+    "text-highlighter-hide",
   ],
   "onLoad": [Function],
   "optionalCookies": Array [
@@ -55,7 +64,9 @@ Object {
     },
     Object {
       "cookies": Array [
-        "_g*",
+        "_ga",
+        "_gat_UA-*",
+        "_gid",
         "_hj*",
         "ajs_*",
         "_vwo*",
@@ -67,6 +78,30 @@ Object {
       "onAccept": [Function],
       "onRevoke": [Function],
     },
+    Object {
+      "cookies": Array [
+        "_gcl_*",
+      ],
+      "description": "We use Google Ads to serve adverts to users on Google. It uses cookies to help us measure how many times people click on these ads and interact with our site.",
+      "label": "Marketing and advertising cookies",
+      "name": "marketing",
+      "onAccept": [Function],
+      "onRevoke": [Function],
+      "thirdPartyCookies": Array [
+        Object {
+          "name": "Google Ads",
+          "optOutLink": "https://adssettings.google.com/",
+        },
+      ],
+      "vendors": Array [
+        Object {
+          "description": "Google Ads serves adverts on Google products and services. It uses cookies help to make advertising more effective. Without cookies, it’s harder for an advertiser to reach its audience, or to know how many ads were shown and how many clicks they received.",
+          "name": "Google Ads",
+          "thirdPartyCookies": true,
+          "url": "https://policies.google.com/technologies/ads",
+        },
+      ],
+    },
   ],
   "position": "left",
   "product": "PRO_MULTISITE",
@@ -74,7 +109,7 @@ Object {
   "statement": Object {
     "description": "For more information, view our",
     "name": "cookie statement.",
-    "updated": "17/08/2020",
+    "updated": "16/10/2020",
     "url": "https://www.nice.org.uk/cookies",
   },
   "text": Object {

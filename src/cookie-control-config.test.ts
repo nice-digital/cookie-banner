@@ -39,6 +39,7 @@ describe("cookie-control-config", () => {
 			event: "cookie.load",
 			preferenceCookies: true,
 			analyticsCookies: false,
+			marketingCookies: false,
 		});
 	});
 
@@ -47,6 +48,8 @@ describe("cookie-control-config", () => {
 		["preferences.revoke", "onRevoke", "preferenceCookies", false, 0],
 		["analytics.accept", "onAccept", "analyticsCookies", true, 1],
 		["analytics.revoke", "onRevoke", "analyticsCookies", false, 1],
+		["marketing.accept", "onAccept", "marketingCookies", true, 2],
+		["marketing.revoke", "onRevoke", "marketingCookies", false, 2],
 	])(
 		"should pass %s event into the dataLayer %s %s",
 		(
@@ -76,6 +79,8 @@ describe("cookie-control-config", () => {
 		["preferenceCookies", false, "onRevoke", 0],
 		["analyticsCookies", true, "onAccept", 1],
 		["analyticsCookies", false, "onRevoke", 1],
+		["marketingCookies", true, "onAccept", 2],
+		["marketingCookies", false, "onRevoke", 2],
 	])(
 		"should set CookieControl.%s variable to %s %s",
 		(
