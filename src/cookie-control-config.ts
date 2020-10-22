@@ -224,7 +224,7 @@ export const cookieControlConfig: CookieControlConfig = {
 		description: "For more information, view our",
 		name: "cookie statement.",
 		url: "https://www.nice.org.uk/cookies",
-		updated: "16/10/2020",
+		updated: "22/10/2020",
 	},
 
 	// Branding
