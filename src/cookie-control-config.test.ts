@@ -1,14 +1,13 @@
 import { cookieControlConfig } from "./cookie-control-config";
-import { CookieControl } from "./types/cookie-control";
+import { CookieControl } from "./cookie-control";
 
 import { CookieControlPurpose } from "./types/cookie-control";
 
 describe("cookie-control-config", () => {
 	beforeEach(() => {
 		window.dataLayer = [];
-		window.CookieControl = {
-			getCategoryConsent: (index: number): boolean => index === 0,
-		} as CookieControl;
+
+		CookieControl.getCategoryConsent = (index: number): boolean => index === 0;
 	});
 
 	it("should match snapshot", () => {
@@ -36,7 +35,7 @@ describe("cookie-control-config", () => {
 	it("should push cookie.load dataLayer event on load", () => {
 		cookieControlConfig.onLoad && cookieControlConfig.onLoad();
 		expect(window.dataLayer).toHaveLength(1);
-		expect(window.dataLayer[0]).toEqual({
+		expect(window.dataLayer?.[0]).toEqual({
 			event: "cookie.load",
 			preferenceCookies: true,
 			analyticsCookies: false,
@@ -68,7 +67,7 @@ describe("cookie-control-config", () => {
 			}
 
 			expect(window.dataLayer).toHaveLength(1);
-			expect(window.dataLayer[0]).toEqual({
+			expect(window.dataLayer?.[0]).toEqual({
 				event: `cookie.${eventName}`,
 				[cookieType]: boolVal,
 			});
@@ -98,9 +97,7 @@ describe("cookie-control-config", () => {
 			}
 
 			expect(
-				window.CookieControl[
-					variableName as "preferenceCookies" | "analyticsCookies"
-				]
+				CookieControl[variableName as "preferenceCookies" | "analyticsCookies"]
 			).toEqual(boolVal);
 		}
 	);

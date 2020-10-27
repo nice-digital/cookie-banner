@@ -1,56 +1,42 @@
-import { loadCookieControl } from "./index";
 import Cookie from "js-cookie";
-import loadjs from "loadjs";
 
+import { loadCookieControl } from "./index";
 import { cookieControlConfig } from "./cookie-control-config";
-import { CookieControl } from "./types/cookie-control";
+import { CookieControl } from "./cookie-control";
 
 jest.mock("js-cookie", () => ({
 	getJSON: jest.fn(),
 }));
 
-jest.mock("loadjs", () => {
-	const mock = jest.fn();
-	((mock as unknown) as typeof loadjs).ready = jest.fn();
-	return mock;
-});
-
 describe("Load cookie control tests", () => {
 	beforeEach(() => {
-		window.CookieControl = (null as unknown) as CookieControl;
+		delete window.dataLayer;
 		jest.resetAllMocks();
 	});
 
-	it("should load cookie control plugin with config once script has loaded", () => {
-		const loadMock = jest.fn();
-		((loadjs.ready as unknown) as jest.Mock).mockImplementation(
-			(_name: string, callback: () => void) => {
-				window.CookieControl = ({
-					load: loadMock,
-				} as unknown) as CookieControl;
-				callback();
-			}
-		);
+	it("should load cookie control plugin with config", () => {
+		const loadMock = jest.spyOn(CookieControl, "load");
 		loadCookieControl();
 		expect(loadMock).toHaveBeenCalledWith(cookieControlConfig);
 	});
 
 	it("should ensure dataLayer exists", () => {
+		expect(window.dataLayer).toBeFalsy();
 		loadCookieControl();
-		expect(window.dataLayer).toBeTruthy;
+		expect(window.dataLayer).toBeTruthy();
 	});
 
-	it("should create placeholder CookieControl object from missing cookie", () => {
+	it("should set CookieControl properties to false with missing cookie", () => {
 		loadCookieControl();
 
-		expect(window.CookieControl).toStrictEqual({
+		expect(CookieControl).toMatchObject({
 			analyticsCookies: false,
 			preferenceCookies: false,
 			marketingCookies: false,
 		});
 	});
 
-	it("should create placeholder CookieControl object from existing cookie with revoked consent", () => {
+	it("should CookieControl object properties from existing cookie with revoked consent", () => {
 		((Cookie.getJSON as unknown) as jest.Mock).mockImplementation(() => ({
 			optionalCookies: {
 				analytics: "revoked",
@@ -61,14 +47,14 @@ describe("Load cookie control tests", () => {
 
 		loadCookieControl();
 
-		expect(window.CookieControl).toStrictEqual({
+		expect(CookieControl).toMatchObject({
 			analyticsCookies: false,
 			preferenceCookies: false,
 			marketingCookies: false,
 		});
 	});
 
-	it("should create placeholder CookieControl object from existing cookie with consent", () => {
+	it("should CookieControl object properties from existing cookie with consent", () => {
 		((Cookie.getJSON as unknown) as jest.Mock).mockImplementation(() => ({
 			optionalCookies: {
 				analytics: "accepted",
@@ -79,7 +65,7 @@ describe("Load cookie control tests", () => {
 
 		loadCookieControl();
 
-		expect(window.CookieControl).toStrictEqual({
+		expect(CookieControl).toMatchObject({
 			analyticsCookies: true,
 			preferenceCookies: true,
 			marketingCookies: true,

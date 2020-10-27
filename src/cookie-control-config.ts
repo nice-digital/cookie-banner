@@ -1,4 +1,5 @@
 import { CookieControlConfig } from "./types/cookie-control";
+import { CookieControl } from "./cookie-control";
 
 export const cookieControlConfig: CookieControlConfig = {
 	apiKey: "843970763414bd3ac1229c12767f5e7fab9ef68c",
@@ -10,15 +11,15 @@ export const cookieControlConfig: CookieControlConfig = {
 		let analyticsCookies = false;
 		let marketingCookies = false;
 		try {
-			preferenceCookies = window.CookieControl.getCategoryConsent(0) || false;
-			analyticsCookies = window.CookieControl.getCategoryConsent(1) || false;
-			marketingCookies = window.CookieControl.getCategoryConsent(2) || false;
+			preferenceCookies = CookieControl.getCategoryConsent(0) || false;
+			analyticsCookies = CookieControl.getCategoryConsent(1) || false;
+			marketingCookies = CookieControl.getCategoryConsent(2) || false;
 		} catch {
 		} finally {
-			window.CookieControl.analyticsCookies = analyticsCookies;
-			window.CookieControl.preferenceCookies = preferenceCookies;
-			window.CookieControl.marketingCookies = marketingCookies;
-			window.dataLayer.push({
+			CookieControl.analyticsCookies = analyticsCookies;
+			CookieControl.preferenceCookies = preferenceCookies;
+			CookieControl.marketingCookies = marketingCookies;
+			window.dataLayer?.push({
 				event: "cookie.load",
 				preferenceCookies,
 				analyticsCookies,
@@ -65,6 +66,12 @@ export const cookieControlConfig: CookieControlConfig = {
 		"irrelevant-highlight",
 		"dedupe-view",
 		"text-highlighter-hide",
+		// Pharmascan
+		"evercookie_cache",
+		"evercookie_etag",
+		"evercookie_png",
+		".ukps",
+		".ukpsLease",
 	],
 	optionalCookies: [
 		{
@@ -86,15 +93,15 @@ export const cookieControlConfig: CookieControlConfig = {
 				"history-stack-details",
 			],
 			onAccept: function (): void {
-				window.CookieControl.preferenceCookies = true;
-				window.dataLayer.push({
+				CookieControl.preferenceCookies = true;
+				window.dataLayer?.push({
 					event: "cookie.preferences.accept",
 					preferenceCookies: true,
 				});
 			},
 			onRevoke: function (): void {
-				window.CookieControl.preferenceCookies = false;
-				window.dataLayer.push({
+				CookieControl.preferenceCookies = false;
+				window.dataLayer?.push({
 					event: "cookie.preferences.revoke",
 					preferenceCookies: false,
 				});
@@ -118,15 +125,15 @@ export const cookieControlConfig: CookieControlConfig = {
 				"_vis*",
 			],
 			onAccept: function (): void {
-				window.CookieControl.analyticsCookies = true;
-				window.dataLayer.push({
+				CookieControl.analyticsCookies = true;
+				window.dataLayer?.push({
 					event: "cookie.analytics.accept",
 					analyticsCookies: true,
 				});
 			},
 			onRevoke: function (): void {
-				window.CookieControl.analyticsCookies = false;
-				window.dataLayer.push({
+				CookieControl.analyticsCookies = false;
+				window.dataLayer?.push({
 					event: "cookie.analytics.revoke",
 					analyticsCookies: false,
 				});
@@ -179,15 +186,15 @@ export const cookieControlConfig: CookieControlConfig = {
 				},
 			],
 			onAccept: function (): void {
-				window.CookieControl.marketingCookies = true;
-				window.dataLayer.push({
+				CookieControl.marketingCookies = true;
+				window.dataLayer?.push({
 					event: "cookie.marketing.accept",
 					marketingCookies: true,
 				});
 			},
 			onRevoke: function (): void {
-				window.CookieControl.marketingCookies = false;
-				window.dataLayer.push({
+				CookieControl.marketingCookies = false;
+				window.dataLayer?.push({
 					event: "cookie.marketing.revoke",
 					marketingCookies: false,
 				});

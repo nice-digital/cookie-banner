@@ -43,6 +43,11 @@ Object {
     "irrelevant-highlight",
     "dedupe-view",
     "text-highlighter-hide",
+    "evercookie_cache",
+    "evercookie_etag",
+    "evercookie_png",
+    ".ukps",
+    ".ukpsLease",
   ],
   "onLoad": [Function],
   "optionalCookies": Array [
