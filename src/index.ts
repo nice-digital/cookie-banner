@@ -1,24 +1,19 @@
-import loadjs from "loadjs";
 import Cookies from "js-cookie";
+import { CookieControl } from "./cookie-control";
 
 import { cookieControlConfig } from "./cookie-control-config";
 import "./cookie-control.scss";
-import { CookieControl, CookieControlCookie } from "./types/cookie-control";
+import { CookieControlCookie } from "./types/cookie-control";
 
-export { CookieControlConfig } from "./types/cookie-control";
-export { cookieControlConfig } from "./cookie-control-config";
-
+// Ensure the GTM dataLayer array exists, in case the cookie banner is loaded before GTM
 const ensureDataLayer = () => {
 	window.dataLayer = window.dataLayer || [];
 };
 
-/**
- * Creates a placeholder Cookie Control object before the external library has loaded.
- *
- * It provides the public API for checking analytics and preference cookies, which
- * allows services to use CookieControl.preferenceCookies on page load.
- */
-const createPlaceholderCookieControl = () => {
+// Parse the cookie that gets set by Cookie Control ourselves.
+// This allows the properties like CookieControl.preferenceCookies to be available
+// even before the license has loaded asynchronously.
+const parseCookieControlCookie = () => {
 	const cookieControlCookie = Cookies.getJSON(
 		"CookieControl"
 	) as CookieControlCookie;
@@ -30,26 +25,15 @@ const createPlaceholderCookieControl = () => {
 		marketingCookies =
 			cookieControlCookie?.optionalCookies.marketing === "accepted";
 
-	window.CookieControl = window.CookieControl || ({} as CookieControl);
-
-	window.CookieControl.analyticsCookies = analyticsCookies;
-	window.CookieControl.preferenceCookies = preferenceCookies;
-	window.CookieControl.marketingCookies = marketingCookies;
+	CookieControl.analyticsCookies = analyticsCookies;
+	CookieControl.preferenceCookies = preferenceCookies;
+	CookieControl.marketingCookies = marketingCookies;
 };
 
 export const loadCookieControl = (): void => {
 	ensureDataLayer();
 
-	createPlaceholderCookieControl();
+	parseCookieControlCookie();
 
-	loadjs(
-		"https://cc.cdn.civiccomputing.com/9/cookieControl-9.x.min.js",
-		"cookie-control"
-	);
-
-	loadjs.ready("cookie-control", () => {
-		// Re-add the custom properties after CookieControl is created
-		createPlaceholderCookieControl();
-		window.CookieControl.load(cookieControlConfig);
-	});
+	CookieControl.load(cookieControlConfig);
 };

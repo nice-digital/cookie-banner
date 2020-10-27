@@ -11,6 +11,9 @@ module.exports = function (env) {
 
 		mode: "production",
 
+		// Our bundle is bigger than webpack's recommended size but that's OK - just ignore the message
+		performance: { hints: false },
+
 		plugins: [
 			new webpack.BannerPlugin({
 				banner: [
