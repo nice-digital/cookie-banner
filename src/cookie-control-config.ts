@@ -72,6 +72,9 @@ export const cookieControlConfig: CookieControlConfig = {
 		"evercookie_png",
 		".ukps",
 		".ukpsLease",
+		//DocSupply
+		"sticky-session",
+		".AspNetCore.Cookies",
 	],
 	optionalCookies: [
 		{
