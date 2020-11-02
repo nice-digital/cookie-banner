@@ -33,6 +33,7 @@ Object {
     "downloadopen",
     "ud",
     "documentReferrer",
+    "impersonate",
     "display-node-orders",
     "data-extraction-fixed-tables",
     "data-extraction-input-vertical",
@@ -129,7 +130,7 @@ These services use cookies to help make advertising more effective. These cookie
   "statement": Object {
     "description": "For more information, view our",
     "name": "cookie statement.",
-    "updated": "22/10/2020",
+    "updated": "02/11/2020",
     "url": "https://www.nice.org.uk/cookies",
   },
   "text": Object {

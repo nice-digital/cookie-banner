@@ -54,6 +54,8 @@ export const cookieControlConfig: CookieControlConfig = {
 		// INTERNAL USE
 		// For InDev -> Consultations
 		"documentReferrer",
+		//NICE Docs (appraisals)
+		"impersonate",
 		// Pathways authoring
 		"display-node-orders",
 		//EPPI
@@ -231,7 +233,7 @@ export const cookieControlConfig: CookieControlConfig = {
 		description: "For more information, view our",
 		name: "cookie statement.",
 		url: "https://www.nice.org.uk/cookies",
-		updated: "22/10/2020",
+		updated: "02/11/2020",
 	},
 
 	// Branding
