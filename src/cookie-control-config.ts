@@ -38,7 +38,12 @@ export const cookieControlConfig: CookieControlConfig = {
 		"__nrpa_2.2",
 		// IdAM
 		"IdAM",
-		"IdAM-*",
+		"IdAMC*",
+		"auth0",
+		"auth0_compat",
+		"did",
+		"did_compat",
+		"_tempCid",
 		// OpenAthens
 		".AspNet.ClientCookie",
 		"OpenIdConnect.nonce.*",
