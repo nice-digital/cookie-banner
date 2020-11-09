@@ -54,6 +54,8 @@ export const cookieControlConfig: CookieControlConfig = {
 		// INTERNAL USE
 		// For InDev -> Consultations
 		"documentReferrer",
+		//NICE Docs (appraisals)
+		"impersonate",
 		// Pathways authoring
 		"display-node-orders",
 		//EPPI

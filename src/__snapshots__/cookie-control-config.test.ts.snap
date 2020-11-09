@@ -33,6 +33,7 @@ Object {
     "downloadopen",
     "ud",
     "documentReferrer",
+    "impersonate",
     "display-node-orders",
     "data-extraction-fixed-tables",
     "data-extraction-input-vertical",
