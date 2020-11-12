@@ -49,6 +49,8 @@ Object {
     "evercookie_png",
     ".ukps",
     ".ukpsLease",
+    "sticky-session",
+    ".AspNetCore.Cookies",
   ],
   "onLoad": [Function],
   "optionalCookies": Array [
