@@ -77,6 +77,8 @@ export const cookieControlConfig: CookieControlConfig = {
 		//DocSupply
 		"sticky-session",
 		".AspNetCore.Cookies",
+		//Consultations
+		"ConsultationSession-*",
 	],
 	optionalCookies: [
 		{
@@ -236,7 +238,7 @@ export const cookieControlConfig: CookieControlConfig = {
 		description: "For more information, view our",
 		name: "cookie statement.",
 		url: "https://www.nice.org.uk/cookies",
-		updated: "22/10/2020",
+		updated: "27/11/2020",
 	},
 
 	// Branding
