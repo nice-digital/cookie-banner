@@ -16,7 +16,6 @@ describe("cookie-control-config", () => {
 
 	it("should remove analytics localStorage cookies on revoke", () => {
 		window.dataLayer = [];
-		window.localStorage.setItem("vwoSn", "true");
 		window.localStorage.setItem("_hjtest", "true");
 		window.localStorage.setItem("test", "true");
 
