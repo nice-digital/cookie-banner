@@ -127,9 +127,8 @@ export const cookieControlConfig: CookieControlConfig = {
 				// Hotjar
 				"_hj*",
 				"ajs_*",
-				// VWO
-				"_vwo*",
-				"_vis*",
+				// Google Optimize
+				"_opt*",
 			],
 			onAccept: function (): void {
 				CookieControl.analyticsCookies = true;
