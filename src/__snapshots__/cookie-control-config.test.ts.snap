@@ -78,8 +78,8 @@ Object {
         "_gid",
         "_hj*",
         "ajs_*",
-        "_vwo*",
-        "_vis*",
+				"_gaexp",
+				"_opt_*",
       ],
       "description": "We use tools such as Google Analytics, Hotjar, VWO and Loop11 to help us anonymously measure how you use our websites. This allows us to make improvements based on our users' needs.
 
