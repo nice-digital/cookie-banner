@@ -118,7 +118,7 @@ export const cookieControlConfig: CookieControlConfig = {
 			name: "analytics",
 			label: "Website usage cookies",
 			description:
-				"We use tools such as Google Analytics, Hotjar, VWO and Loop11 to help us anonymously measure how you use our websites. This allows us to make improvements based on our users' needs.\n\nThese tools set cookies that store anonymised information about how you got to the site, and how you interact with the site.",
+				"We use tools such as Google Analytics, Hotjar, Google Optimize and Loop11 to help us anonymously measure how you use our websites. This allows us to make improvements based on our users' needs.\n\nThese tools set cookies that store anonymised information about how you got to the site, and how you interact with the site.",
 			cookies: [
 				// Google Analytics
 				"_ga",
@@ -127,9 +127,33 @@ export const cookieControlConfig: CookieControlConfig = {
 				// Hotjar
 				"_hj*",
 				"ajs_*",
-				// VWO
-				"_vwo*",
-				"_vis*",
+				// Google Optimize
+				"_gaexp",
+				"_opt_*",
+			],
+			vendors: [
+				{
+					name: "Google Analytics",
+					description:
+						"We use Google Analytics for usage metrics like page views and link clicks. It uses cookies to join up user behaviour across multiple page views and sessions.",
+					thirdPartyCookies: false,
+					url: "https://policies.google.com/technologies/cookies?hl=en-US",
+				},
+				{
+					name: "HotJar",
+					description:
+						"We use Hotjar for behaviour analysis, heatmaps, clickmaps, usage recordings, polls and surveys. It uses cookies to stop users from seeing the same poll twice.",
+					thirdPartyCookies: false,
+					url:
+						"https://help.hotjar.com/hc/en-us/articles/115011789248-Hotjar-Cookie-Information",
+				},
+				{
+					name: "Google Optimize",
+					description:
+						"We use Google Optimize to experiment with new content and designs to help improve our services. It uses cookies to remember which experiments a user has seen.",
+					thirdPartyCookies: false,
+					url: "https://policies.google.com/technologies/cookies?hl=en-US",
+				},
 			],
 			onAccept: function (): void {
 				CookieControl.analyticsCookies = true;
@@ -144,9 +168,6 @@ export const cookieControlConfig: CookieControlConfig = {
 					event: "cookie.analytics.revoke",
 					analyticsCookies: false,
 				});
-
-				// Cookie Control doesn't handle local storage automatically, so we have to tidy analytics local storage ourselves
-				window.localStorage.removeItem("vwoSn");
 
 				// HotJar uses local storage with keys starting _hj
 				Object.keys(window.localStorage)
@@ -238,7 +259,7 @@ export const cookieControlConfig: CookieControlConfig = {
 		description: "For more information, view our",
 		name: "cookie statement.",
 		url: "https://www.nice.org.uk/cookies",
-		updated: "27/11/2020",
+		updated: "22/12/2020",
 	},
 
 	// Branding
