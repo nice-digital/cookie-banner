@@ -24,7 +24,12 @@ Object {
     "__ngat_1.2",
     "__nrpa_2.2",
     "IdAM",
-    "IdAM-*",
+    "IdAMC*",
+    "auth0",
+    "auth0_compat",
+    "did",
+    "did_compat",
+    "_tempCid",
     ".AspNet.ClientCookie",
     "OpenIdConnect.nonce.*",
     "ASPXAUTH",
@@ -153,7 +158,7 @@ These services use cookies to help make advertising more effective. These cookie
   "statement": Object {
     "description": "For more information, view our",
     "name": "cookie statement.",
-    "updated": "22/12/2020",
+    "updated": "26/02/2021",
     "url": "https://www.nice.org.uk/cookies",
   },
   "text": Object {

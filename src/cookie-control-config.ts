@@ -38,7 +38,12 @@ export const cookieControlConfig: CookieControlConfig = {
 		"__nrpa_2.2",
 		// IdAM
 		"IdAM",
-		"IdAM-*",
+		"IdAMC*",
+		"auth0",
+		"auth0_compat",
+		"did",
+		"did_compat",
+		"_tempCid",
 		// OpenAthens
 		".AspNet.ClientCookie",
 		"OpenIdConnect.nonce.*",
@@ -259,7 +264,7 @@ export const cookieControlConfig: CookieControlConfig = {
 		description: "For more information, view our",
 		name: "cookie statement.",
 		url: "https://www.nice.org.uk/cookies",
-		updated: "22/12/2020",
+		updated: "26/02/2021",
 	},
 
 	// Branding
