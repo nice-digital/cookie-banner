@@ -205,6 +205,16 @@ export const cookieControlConfig: CookieControlConfig = {
 					optOutLink:
 						"https://www.linkedin.com/help/linkedin/answer/62931/manage-advertising-preferences?lang=en",
 				},
+				{
+					name: "Facebook",
+					optOutLink:
+						"https://en-gb.facebook.com/help/568137493302217",
+				},
+				{
+					name: "Twitter",
+					optOutLink:
+						"https://business.twitter.com/en/help/ads-policies/product-policies/interest-based-opt-out-policy.html",
+				},
 			],
 			vendors: [
 				{
