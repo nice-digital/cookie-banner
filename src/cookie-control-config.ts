@@ -184,12 +184,16 @@ export const cookieControlConfig: CookieControlConfig = {
 			name: "marketing",
 			label: "Marketing and advertising cookies",
 			description:
-				"We use Google Ads and LinkedIn to show adverts on external sites to promote NICE services, events and content.\n\nThese services use cookies to help make advertising more effective. These cookies are used for things like showing relevant adverts based on website visits, preventing the same ad from continuously re-appearing, or by measuring how many times people click on these adverts.",
+				"We use Google Ads, LinkedIn, Facebook and Twitter to show adverts on external sites to promote NICE services, events and content.\n\nThese services may use cookies to help make advertising more effective. These cookies are used for things like showing relevant adverts based on website visits, preventing the same ad from continuously re-appearing, or by measuring how many times people click on these adverts.",
 			cookies: [
 				// Conversion linker https://support.google.com/tagmanager/answer/7549390?hl=en
 				"_gcl_*",
 				// LinkedIn: https://www.linkedin.com/legal/l/cookie-table#thirdparty
 				"li_fat_id",
+				// Facebook: https://en-gb.facebook.com/policy/cookies/
+				"_fbp",
+				"_fbc",
+				// Twitter appears to be cookieless: https://business.twitter.com/en/help/campaign-measurement-and-analytics/conversion-tracking-for-websites.html
 			],
 			thirdPartyCookies: [
 				{
@@ -216,6 +220,20 @@ export const cookieControlConfig: CookieControlConfig = {
 						"LinkedIn shows adverts when you browse LinkedIn products and services. It uses cookies to help to make advertising more effective.",
 					thirdPartyCookies: true,
 					url: "https://www.linkedin.com/legal/cookie-policy",
+				},
+				{
+					name: "Facebook",
+					description:
+						"Facebook shows adverts when you browse their platform. It uses cookies to help to make advertising more effective.",
+					thirdPartyCookies: true,
+					url: "https://en-gb.facebook.com/policy/cookies/",
+				},
+				{
+					name: "Twitter",
+					description:
+						"Twitter shows adverts when you browse their platform. It uses cookies to help to make advertising more effective.",
+					thirdPartyCookies: true,
+					url: "https://help.twitter.com/en/rules-and-policies/twitter-cookies",
 				},
 			],
 			onAccept: function (): void {
