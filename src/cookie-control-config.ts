@@ -207,8 +207,7 @@ export const cookieControlConfig: CookieControlConfig = {
 				},
 				{
 					name: "Facebook",
-					optOutLink:
-						"https://en-gb.facebook.com/help/568137493302217",
+					optOutLink: "https://en-gb.facebook.com/help/568137493302217",
 				},
 				{
 					name: "Twitter",
