@@ -177,6 +177,8 @@ These services may use cookies to help make advertising more effective. These co
   "position": "left",
   "product": "PRO_MULTISITE",
   "rejectButton": true,
+  "sameSiteCookie": false,
+  "sameSiteValue": "Lax",
   "statement": Object {
     "description": "For more information, view our",
     "name": "cookie statement.",
