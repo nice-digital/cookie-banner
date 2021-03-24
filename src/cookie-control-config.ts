@@ -309,4 +309,8 @@ export const cookieControlConfig: CookieControlConfig = {
 		// We set our own focus styles
 		highlightFocus: false,
 	},
+
+	// Fix for CB-73 Banner pops up between evidenc.nhs.uk and other nice.org.uk domains
+	sameSiteCookie: false,
+	sameSiteValue: "Lax",
 };
