@@ -129,7 +129,7 @@ export const cookieControlConfig: CookieControlConfig = {
 				"_ga",
 				"_gat_UA-*",
 				"_gid",
-				"_ga_G*",
+				"_ga_*",
 				// Hotjar
 				"_hj*",
 				"ajs_*",
