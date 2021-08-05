@@ -37,7 +37,7 @@ describe("Load cookie control tests", () => {
 	});
 
 	it("should CookieControl object properties from existing cookie with revoked consent", () => {
-		((Cookie.getJSON as unknown) as jest.Mock).mockImplementation(() => ({
+		(Cookie.getJSON as unknown as jest.Mock).mockImplementation(() => ({
 			optionalCookies: {
 				analytics: "revoked",
 				preferences: "revoked",
@@ -55,7 +55,7 @@ describe("Load cookie control tests", () => {
 	});
 
 	it("should CookieControl object properties from existing cookie with consent", () => {
-		((Cookie.getJSON as unknown) as jest.Mock).mockImplementation(() => ({
+		(Cookie.getJSON as unknown as jest.Mock).mockImplementation(() => ({
 			optionalCookies: {
 				analytics: "accepted",
 				preferences: "accepted",

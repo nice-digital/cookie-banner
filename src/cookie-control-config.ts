@@ -150,8 +150,7 @@ export const cookieControlConfig: CookieControlConfig = {
 					description:
 						"We use Hotjar for behaviour analysis, heatmaps, clickmaps, usage recordings, polls and surveys. It uses cookies to stop users from seeing the same poll twice.",
 					thirdPartyCookies: false,
-					url:
-						"https://help.hotjar.com/hc/en-us/articles/115011789248-Hotjar-Cookie-Information",
+					url: "https://help.hotjar.com/hc/en-us/articles/115011789248-Hotjar-Cookie-Information",
 				},
 				{
 					name: "Google Optimize",

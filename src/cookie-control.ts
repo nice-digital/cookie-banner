@@ -44,8 +44,8 @@ export default async function (): Promise<ValLoaderReturn> {
 
 // Used purely for a type definition, hence the use of a placeholder, as the const needs to be initiated with something
 // This is replaced by val-loader at build time - see the default exported function above
-export const CookieControl: CookieControlType = ({
+export const CookieControl: CookieControlType = {
 	load: () => {
 		/* deliberately empty, used for mocking */
 	},
-} as unknown) as CookieControlType;
+} as unknown as CookieControlType;
