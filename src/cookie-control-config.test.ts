@@ -19,7 +19,8 @@ describe("cookie-control-config", () => {
 		window.localStorage.setItem("_hjtest", "true");
 		window.localStorage.setItem("test", "true");
 
-		const optionalCookies = cookieControlConfig.optionalCookies as CookieControlPurpose[],
+		const optionalCookies =
+				cookieControlConfig.optionalCookies as CookieControlPurpose[],
 			analyticsCookies = optionalCookies.find(
 				({ name }) => name == "analytics"
 			) as CookieControlPurpose,
