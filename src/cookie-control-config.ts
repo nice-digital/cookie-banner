@@ -106,17 +106,23 @@ export const cookieControlConfig: CookieControlConfig = {
 			],
 			onAccept: function (): void {
 				CookieControl.preferenceCookies = true;
-				window.dataLayer?.push({
-					event: "cookie.preferences.accept",
-					preferenceCookies: true,
-				});
+				window.dataLayer?.push(
+					{
+						event: "cookie.preferences.accept",
+						preferenceCookies: true,
+					},
+					["consent", "update", { personalization_storage: "granted" }]
+				);
 			},
 			onRevoke: function (): void {
 				CookieControl.preferenceCookies = false;
-				window.dataLayer?.push({
-					event: "cookie.preferences.revoke",
-					preferenceCookies: false,
-				});
+				window.dataLayer?.push(
+					{
+						event: "cookie.preferences.revoke",
+						preferenceCookies: false,
+					},
+					["consent", "update", { personalization_storage: "denied" }]
+				);
 			},
 		},
 		{
@@ -162,18 +168,23 @@ export const cookieControlConfig: CookieControlConfig = {
 			],
 			onAccept: function (): void {
 				CookieControl.analyticsCookies = true;
-				window.dataLayer?.push({
-					event: "cookie.analytics.accept",
-					analyticsCookies: true,
-				});
+				window.dataLayer?.push(
+					{
+						event: "cookie.analytics.accept",
+						analyticsCookies: true,
+					},
+					["consent", "update", { analytics_storage: "granted" }]
+				);
 			},
 			onRevoke: function (): void {
 				CookieControl.analyticsCookies = false;
-				window.dataLayer?.push({
-					event: "cookie.analytics.revoke",
-					analyticsCookies: false,
-				});
-
+				window.dataLayer?.push(
+					{
+						event: "cookie.analytics.revoke",
+						analyticsCookies: false,
+					},
+					["consent", "update", { analytics_storage: "denied" }]
+				);
 				// HotJar uses local storage with keys starting _hj
 				Object.keys(window.localStorage)
 					.filter((key) => /^_hj/.test(key))
@@ -247,17 +258,23 @@ export const cookieControlConfig: CookieControlConfig = {
 			],
 			onAccept: function (): void {
 				CookieControl.marketingCookies = true;
-				window.dataLayer?.push({
-					event: "cookie.marketing.accept",
-					marketingCookies: true,
-				});
+				window.dataLayer?.push(
+					{
+						event: "cookie.marketing.accept",
+						marketingCookies: true,
+					},
+					["consent", "update", { ad_storage: "granted" }]
+				);
 			},
 			onRevoke: function (): void {
 				CookieControl.marketingCookies = false;
-				window.dataLayer?.push({
-					event: "cookie.marketing.revoke",
-					marketingCookies: false,
-				});
+				window.dataLayer?.push(
+					{
+						event: "cookie.marketing.revoke",
+						marketingCookies: false,
+					},
+					["consent", "update", { ad_storage: "denied" }]
+				);
 			},
 		},
 	],
