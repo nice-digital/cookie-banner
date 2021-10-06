@@ -14,9 +14,17 @@ const ensureDataLayer = () => {
 // This allows the properties like CookieControl.preferenceCookies to be available
 // even before the license has loaded asynchronously.
 const parseCookieControlCookie = () => {
-	const cookieControlCookie = Cookies.getJSON(
-		"CookieControl"
-	) as CookieControlCookie;
+	const cookie = Cookies.get("CookieControl");
+
+	if (!cookie) {
+		CookieControl.analyticsCookies =
+			CookieControl.preferenceCookies =
+			CookieControl.marketingCookies =
+				false;
+		return;
+	}
+
+	const cookieControlCookie = JSON.parse(cookie) as CookieControlCookie;
 
 	const analyticsCookies =
 			cookieControlCookie?.optionalCookies.analytics === "accepted",
