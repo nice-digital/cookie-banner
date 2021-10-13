@@ -10,6 +10,16 @@ const ensureDataLayer = () => {
 	window.dataLayer = window.dataLayer || [];
 };
 
+// Ensure gtag() function exists
+const ensureGtag = () => {
+	window.gtag =
+		window.gtag ||
+		function () {
+			// eslint-disable-next-line prefer-rest-params
+			return window.dataLayer?.push(arguments);
+		};
+};
+
 // Parse the cookie that gets set by Cookie Control ourselves.
 // This allows the properties like CookieControl.preferenceCookies to be available
 // even before the license has loaded asynchronously.
@@ -40,6 +50,8 @@ const parseCookieControlCookie = () => {
 
 export const loadCookieControl = (): void => {
 	ensureDataLayer();
+
+	ensureGtag();
 
 	parseCookieControlCookie();
 

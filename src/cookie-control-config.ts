@@ -172,15 +172,7 @@ export const cookieControlConfig: CookieControlConfig = {
 					event: "cookie.analytics.accept",
 					analyticsCookies: true,
 				});
-				if (typeof gtag !== "undefined") {
-					gtag("consent", "update", { analytics_storage: "granted" });
-				} else {
-					window.dataLayer?.push([
-						"consent",
-						"update",
-						{ analytics_storage: "granted" },
-					]);
-				}
+				gtag("consent", "update", { analytics_storage: "granted" });
 			},
 			onRevoke: function (): void {
 				CookieControl.analyticsCookies = false;
@@ -188,15 +180,7 @@ export const cookieControlConfig: CookieControlConfig = {
 					event: "cookie.analytics.revoke",
 					analyticsCookies: false,
 				});
-				if (typeof gtag !== "undefined") {
-					gtag("consent", "update", { analytics_storage: "denied" });
-				} else {
-					window.dataLayer?.push([
-						"consent",
-						"update",
-						{ analytics_storage: "denied" },
-					]);
-				}
+				gtag("consent", "update", { analytics_storage: "denied" });
 				// HotJar uses local storage with keys starting _hj
 				Object.keys(window.localStorage)
 					.filter((key) => /^_hj/.test(key))
@@ -270,23 +254,19 @@ export const cookieControlConfig: CookieControlConfig = {
 			],
 			onAccept: function (): void {
 				CookieControl.marketingCookies = true;
-				window.dataLayer?.push(
-					{
-						event: "cookie.marketing.accept",
-						marketingCookies: true,
-					},
-					["consent", "update", { ad_storage: "granted" }]
-				);
+				window.dataLayer?.push({
+					event: "cookie.marketing.accept",
+					marketingCookies: true,
+				});
+				gtag("consent", "update", { ad_storage: "granted" });
 			},
 			onRevoke: function (): void {
 				CookieControl.marketingCookies = false;
-				window.dataLayer?.push(
-					{
-						event: "cookie.marketing.revoke",
-						marketingCookies: false,
-					},
-					["consent", "update", { ad_storage: "denied" }]
-				);
+				window.dataLayer?.push({
+					event: "cookie.marketing.revoke",
+					marketingCookies: false,
+				});
+				gtag("consent", "update", { ad_storage: "denied" });
 			},
 		},
 	],
