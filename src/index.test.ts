@@ -11,6 +11,7 @@ jest.mock("js-cookie", () => ({
 describe("Load cookie control tests", () => {
 	beforeEach(() => {
 		delete window.dataLayer;
+		delete (window as { gtag?: unknown }).gtag;
 		jest.resetAllMocks();
 	});
 
@@ -24,6 +25,12 @@ describe("Load cookie control tests", () => {
 		expect(window.dataLayer).toBeFalsy();
 		loadCookieControl();
 		expect(window.dataLayer).toBeTruthy();
+	});
+
+	it("should ensure gtag exists", () => {
+		expect(window.gtag).toBeFalsy();
+		loadCookieControl();
+		expect(window.gtag).toBeTruthy();
 	});
 
 	it("should set CookieControl properties to false with missing cookie", () => {

@@ -10,7 +10,7 @@ const ensureDataLayer = () => {
 	window.dataLayer = window.dataLayer || [];
 };
 
-// Ensure gtag() function exists
+// Ensure gtag() function exists as per https://developers.google.com/tag-platform/devguides/consent
 const ensureGtag = () => {
 	window.gtag =
 		window.gtag ||

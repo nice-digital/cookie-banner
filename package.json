@@ -46,6 +46,7 @@
   "devDependencies": {
     "@nice-digital/browserslist-config": "^2.0.1",
     "@nice-digital/nds-core": "^1.2.8",
+    "@types/gtag.js": "0.0.7",
     "@types/jest": "^27.0.2",
     "@types/js-cookie": "^3.0.0",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
