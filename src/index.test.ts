@@ -4,9 +4,7 @@ import { loadCookieControl } from "./index";
 import { cookieControlConfig } from "./cookie-control-config";
 import { CookieControl } from "./cookie-control";
 
-jest.mock("js-cookie", () => ({
-	getJSON: jest.fn(),
-}));
+jest.mock("js-cookie");
 
 describe("Load cookie control tests", () => {
 	beforeEach(() => {
@@ -37,13 +35,9 @@ describe("Load cookie control tests", () => {
 	});
 
 	it("should CookieControl object properties from existing cookie with revoked consent", () => {
-		(Cookie.getJSON as unknown as jest.Mock).mockImplementation(() => ({
-			optionalCookies: {
-				analytics: "revoked",
-				preferences: "revoked",
-				marketing: "revoked",
-			},
-		}));
+		(Cookie.get as jest.Mock).mockReturnValue(
+			`{"optionalCookies":{"analytics":"revoked","preferences":"revoked","marketing":"revoked"}}`
+		);
 
 		loadCookieControl();
 
@@ -55,13 +49,9 @@ describe("Load cookie control tests", () => {
 	});
 
 	it("should CookieControl object properties from existing cookie with consent", () => {
-		(Cookie.getJSON as unknown as jest.Mock).mockImplementation(() => ({
-			optionalCookies: {
-				analytics: "accepted",
-				preferences: "accepted",
-				marketing: "accepted",
-			},
-		}));
+		(Cookie.get as jest.Mock).mockReturnValue(
+			`{"optionalCookies":{"analytics":"accepted","preferences":"accepted","marketing":"accepted"}}`
+		);
 
 		loadCookieControl();
 

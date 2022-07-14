@@ -9,7 +9,7 @@ Object {
   "branding": Object {
     "backgroundColor": "#fff",
     "fontColor": "#0e0e0e",
-    "fontFamily": "Lato,'Helvetica Neue',Helvetica,Arial,sans-serif",
+    "fontFamily": "Inter,'Helvetica Neue',Helvetica,Arial,sans-serif",
     "fontSize": "1rem",
     "removeAbout": true,
     "removeIcon": true,

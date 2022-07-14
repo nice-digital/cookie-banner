@@ -296,7 +296,7 @@ export const cookieControlConfig: CookieControlConfig = {
 
 	// Branding
 	branding: {
-		fontFamily: "Lato,'Helvetica Neue',Helvetica,Arial,sans-serif",
+		fontFamily: "Inter,'Helvetica Neue',Helvetica,Arial,sans-serif",
 		removeAbout: true,
 		removeIcon: true,
 		fontSize: "1rem",
