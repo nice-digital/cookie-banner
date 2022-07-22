@@ -48,7 +48,7 @@ describe("Load cookie control tests", () => {
 		});
 	});
 
-	it("should CookieControl object properties from existing cookie with consent", () => {
+	it("should get CookieControl object properties from existing cookie with consent", () => {
 		(Cookie.get as jest.Mock).mockReturnValue(
 			`{"optionalCookies":{"analytics":"accepted","preferences":"accepted","marketing":"accepted"}}`
 		);
