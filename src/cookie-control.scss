@@ -1,9 +1,13 @@
-@import '~@nice-digital/nds-core/scss/core.scss';
+@use '@nice-digital/nds-core/scss/colours';
+@use '@nice-digital/nds-core/scss/colours/tokens/global';
+@use '@nice-digital/nds-core/scss/spacing';
+@use '@nice-digital/nds-core/scss/typography';
+@use '@nice-digital/nds-core/scss/utils';
 
-@mixin focus-ring {
+@mixin -focus-ring {
   // Unfortunately we can't use @include nds-default-focus-style; because we
   // have to use important to override Cookie Control's styling
-  outline: rem($nds-spacing-x-small) solid $nds-colour-focus !important;
+  outline: utils.rem(spacing.$x-small) solid colours.$focus !important;
 }
 
 #ccc {
@@ -23,49 +27,49 @@
     min-width: auto !important;
 
     &:focus {
-      @include focus-ring;
+      @include -focus-ring;
     }
   }
 
   #ccc-title {
-    font-family: unquote($nds-font-family-serif);
-    font-size: rem(nds-get-font-size(h3)) !important;
+    font-family: typography.get-font-family(serif);
+    font-size: utils.rem(typography.get-font-size(h3)) !important;
     font-weight: 600;
     line-height: 1.3;
   }
 
   #ccc-necessary-title,
   .optional-cookie-header {
-    font-family: unquote($nds-font-family-serif);
-    font-size: rem(nds-get-font-size(h4)) !important;
+    font-family: typography.get-font-family(serif);
+    font-size: utils.rem(typography.get-font-size(h4)) !important;
     font-weight: 600;
     line-height: 1.3;
   }
 
   .optional-vendor-heading {
-    font-family: unquote($nds-font-family-sans);
+    font-family: typography.get-font-family(sans);
     font-weight: 600;
     line-height: 1.3;
   }
 
   #ccc-content {
     a {
-      color: $nds-colour-link !important;
+      color: colours.$link !important;
 
       span {
-        color: $nds-colour-link !important;
+        color: colours.$link !important;
       }
 
       &:visited {
-        color: $nds-colour-link-visited !important;
+        color: colours.$link-visited !important;
       }
 
       &:hover {
-        color: $nds-colour-link-hover !important;
+        color: colours.$link-hover !important;
       }
 
       &:focus {
-        @include focus-ring;
+        @include -focus-ring;
       }
     }
   }
@@ -84,49 +88,50 @@
   // Reject/accept buttons
   .ccc-notify-button {
     border-radius: 0 !important;
+    box-shadow: 4px 4px 8px rgb(0 0 0 / 20%);
     height: auto !important; // Syndication has absolute height buttons
-    padding: em($nds-spacing-small $nds-spacing-medium) !important;
+    padding: utils.rem(spacing.$small spacing.$medium) !important;
 
     &:focus {
-      @include focus-ring;
+      @include -focus-ring;
     }
   }
 
   // Accept button
   .ccc-accept-button {
-    background: $nds-colour-btn-cta !important;
-    border: em(1px) solid $nds-colour-btn-cta-text !important;
+    background: colours.$btn-cta !important;
+    border: utils.rem(1px) solid global.$white !important;
 
     span {
-      color: $nds-colour-btn-cta-text !important;
+      color: colours.$btn-cta-text !important;
     }
 
     &:hover,
     &:focus,
     &:active {
-      background: $nds-colour-btn-cta-hover !important;
+      background: colours.$btn-cta-hover !important;
     }
   }
 
   // Reject button
   .ccc-reject-button {
-    background: $nds-colour-btn-inverse !important;
-    border: em(1px) solid $nds-colour-btn-inverse-text !important;
+    background: colours.$btn-inverse !important;
+    border: utils.rem(1px) solid colours.$btn-inverse-text !important;
 
     &:hover,
     &:focus,
     &:active {
-      background: $nds-colour-btn-inverse-hover !important;
+      background: colours.$btn-inverse-hover !important;
     }
   }
 
   .checkbox-toggle {
-    background: $nds-colour-nice-dark-grey !important;
-    border-color: $nds-colour-nice-dark-grey !important;
+    background: global.$black-tint-1 !important;
+    border-color: global.$black-tint-1 !important;
 
     &:focus-within {
-      @include focus-ring;
-      outline-offset: rem($nds-spacing-xx-small);
+      @include -focus-ring;
+      outline-offset: utils.rem(spacing.$xx-small);
 
       .checkbox-toggle-input:focus ~ .checkbox-toggle-toggle {
         outline: none !important;
@@ -134,7 +139,7 @@
     }
 
     .checkbox-toggle-input:focus ~ .checkbox-toggle-toggle {
-      @include focus-ring;
+      @include -focus-ring;
     }
 
     .checkbox-toggle-label {
@@ -142,18 +147,18 @@
     }
 
     .checkbox-toggle-toggle {
-      background: $nds-colour-nice-white !important;
+      background: global.$white !important;
     }
 
     .checkbox-toggle-on,
     .checkbox-toggle-off {
-      color: $nds-colour-nice-white !important;
+      color: global.$white !important;
     }
   }
 
   .ccc-alert {
-    background: $nds-colour-nice-grey-3 !important;
-    border: 1px solid $nds-colour-nice-grey-2 !important;
+    background: global.$nice-cream-3 !important;
+    border: 1px solid global.$custom-grey-2 !important;
     border-radius: 0 !important;
 
     > :last-child {
@@ -180,8 +185,8 @@
   }
 
   .optional-vendor-heading {
-    font-size: rem(nds-get-font-size(h6)) !important;
-    margin-bottom: rem($nds-spacing-small) !important;
+    font-size: utils.rem(typography.get-font-size(h6)) !important;
+    margin-bottom: utils.rem(spacing.$small) !important;
     padding-left: 0 !important;
     text-decoration: none !important;
   }
