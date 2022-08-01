@@ -84,6 +84,7 @@ export const cookieControlConfig: CookieControlConfig = {
 		".AspNetCore.Cookies",
 		//Consultations
 		"ConsultationSession-*",
+		//Internal exclusion cookie (used for analytics)
 		"nice_internal_exclusion",
 	],
 	optionalCookies: [
