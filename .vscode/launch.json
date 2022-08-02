@@ -9,19 +9,47 @@
       "request": "launch",
       "name": "Jest Tests",
       "program": "${workspaceRoot}\\node_modules\\jest\\bin\\jest.js",
-      "args": ["-c", "./jest.config.js", "--verbose", "-i", "--no-cache"],
+      "args": [
+        "-c",
+        "./jest.config.js",
+        "--verbose",
+        "-i",
+        "--no-cache"
+      ],
       "console": "integratedTerminal",
       "internalConsoleOptions": "openOnSessionStart",
-      "outFiles": ["${workspaceRoot}/dist/**/*"]
+      "outFiles": [
+        "${workspaceRoot}/dist/**/*"
+      ]
     },
     {
       "type": "node",
       "request": "launch",
       "name": "Launch Program",
-      "skipFiles": ["<node_internals>/**"],
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
       "program": "${workspaceFolder}\\lib\\index.js",
       "preLaunchTask": "tsc: build - tsconfig.json",
-      "outFiles": ["${workspaceFolder}/lib/**/*.js"]
+      "outFiles": [
+        "${workspaceFolder}/lib/**/*.js"
+      ]
+    },
+    {
+      "type": "node",
+      "name": "vscode-jest-tests",
+      "request": "launch",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "disableOptimisticBPs": true,
+      "program": "${workspaceFolder}/jest",
+      "cwd": "${workspaceFolder}",
+      "args": [
+        "run",
+        "test",
+        "--runInBand",
+        "--watchAll=false"
+      ]
     }
   ]
 }
