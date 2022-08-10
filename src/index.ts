@@ -14,20 +14,29 @@ const ensureDataLayer = () => {
 // This allows the properties like CookieControl.preferenceCookies to be available
 // even before the license has loaded asynchronously.
 const parseCookieControlCookie = () => {
-	const cookieControlCookie = Cookies.getJSON(
-		"CookieControl"
-	) as CookieControlCookie;
+	const cookieStrValue = Cookies.get("CookieControl");
 
-	const analyticsCookies =
-			cookieControlCookie?.optionalCookies.analytics === "accepted",
-		preferenceCookies =
-			cookieControlCookie?.optionalCookies.preferences === "accepted",
-		marketingCookies =
-			cookieControlCookie?.optionalCookies.marketing === "accepted";
+	if (cookieStrValue) {
+		const cookieControlCookie = JSON.parse(
+			cookieStrValue
+		) as CookieControlCookie;
 
-	CookieControl.analyticsCookies = analyticsCookies;
-	CookieControl.preferenceCookies = preferenceCookies;
-	CookieControl.marketingCookies = marketingCookies;
+		const analyticsCookies =
+				cookieControlCookie.optionalCookies.analytics === "accepted",
+			preferenceCookies =
+				cookieControlCookie.optionalCookies.preferences === "accepted",
+			marketingCookies =
+				cookieControlCookie.optionalCookies.marketing === "accepted";
+
+		CookieControl.analyticsCookies = analyticsCookies;
+		CookieControl.preferenceCookies = preferenceCookies;
+		CookieControl.marketingCookies = marketingCookies;
+	} else {
+		CookieControl.analyticsCookies =
+			CookieControl.preferenceCookies =
+			CookieControl.marketingCookies =
+				false;
+	}
 };
 
 export const loadCookieControl = (): void => {

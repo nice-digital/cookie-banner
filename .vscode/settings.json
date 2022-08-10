@@ -24,5 +24,6 @@
     "**/*.code-search": true,
     "lib": true,
     "dist": true
-  }
+  },
+  "typescript.tsdk": "./node_modules/typescript/lib"
 }
