@@ -52,6 +52,11 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			title: "Cookie banner",
 			template: "index.html",
+			filename: "index.html",
+		}),
+		new HtmlWebpackPlugin({
+			template: "internal-traffic-exclusion.html",
+			filename: "internal-traffic-exclusion.html",
 		}),
 	],
 	devServer: {
