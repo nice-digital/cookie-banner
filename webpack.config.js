@@ -57,6 +57,7 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: "internal-traffic-exclusion.html",
 			filename: "internal-traffic-exclusion.html",
+			inject: false,
 		}),
 	],
 	devServer: {
