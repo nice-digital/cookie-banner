@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Internal traffic exclusion</title>
+<meta name="robots" content="noindex">
+</head>
+<body>
+<script type="text/javascript">
+	if(!document.cookie.match(".*nice_internal_exclusion.*")){
+		console.log('setting internal traffic exclusion cookie');
+		document.cookie ='nice_internal_exclusion=true; domain=nice.org.uk; path=/; max-age=63072000; samesite=none; secure';
+	}
+</script>
+</body>
+</html>

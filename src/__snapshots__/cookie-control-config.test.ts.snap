@@ -57,6 +57,7 @@ Object {
     "sticky-session",
     ".AspNetCore.Cookies",
     "ConsultationSession-*",
+    "nice_internal_exclusion",
   ],
   "onLoad": [Function],
   "optionalCookies": Array [
