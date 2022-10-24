@@ -6,6 +6,7 @@ import { CookieControlPurpose } from "./types/cookie-control";
 describe("cookie-control-config", () => {
 	beforeEach(() => {
 		window.dataLayer = [];
+		window.gtag = jest.fn();
 
 		CookieControl.getCategoryConsent = (index: number): boolean => index === 0;
 	});

@@ -112,6 +112,7 @@ export const cookieControlConfig: CookieControlConfig = {
 					event: "cookie.preferences.accept",
 					preferenceCookies: true,
 				});
+				// TODO: Add preference consent, see https://github.com/DefinitelyTyped/DefinitelyTyped/discussions/53958
 			},
 			onRevoke: function (): void {
 				CookieControl.preferenceCookies = false;
@@ -168,6 +169,7 @@ export const cookieControlConfig: CookieControlConfig = {
 					event: "cookie.analytics.accept",
 					analyticsCookies: true,
 				});
+				window.gtag("consent", "update", { analytics_storage: "granted" });
 			},
 			onRevoke: function (): void {
 				CookieControl.analyticsCookies = false;
@@ -175,7 +177,7 @@ export const cookieControlConfig: CookieControlConfig = {
 					event: "cookie.analytics.revoke",
 					analyticsCookies: false,
 				});
-
+				window.gtag("consent", "update", { analytics_storage: "denied" });
 				// HotJar uses local storage with keys starting _hj
 				Object.keys(window.localStorage)
 					.filter((key) => /^_hj/.test(key))
@@ -253,6 +255,7 @@ export const cookieControlConfig: CookieControlConfig = {
 					event: "cookie.marketing.accept",
 					marketingCookies: true,
 				});
+				window.gtag("consent", "update", { ad_storage: "granted" });
 			},
 			onRevoke: function (): void {
 				CookieControl.marketingCookies = false;
@@ -260,6 +263,7 @@ export const cookieControlConfig: CookieControlConfig = {
 					event: "cookie.marketing.revoke",
 					marketingCookies: false,
 				});
+				window.gtag("consent", "update", { ad_storage: "denied" });
 			},
 		},
 	],
