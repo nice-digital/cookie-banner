@@ -14,6 +14,7 @@ const ensureDataLayer = () => {
 const ensureGtag = () => {
 	window.gtag =
 		window.gtag ||
+		window.top?.window.gtag ||
 		function () {
 			// eslint-disable-next-line prefer-rest-params
 			return console.log("gtag disabled - arguments are: ", arguments);
