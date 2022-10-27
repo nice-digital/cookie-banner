@@ -16,7 +16,7 @@ const ensureGtag = () => {
 		window.gtag ||
 		function () {
 			// eslint-disable-next-line prefer-rest-params
-			return window.dataLayer?.push(arguments);
+			return console.log("gtag disabled - arguments are: ", arguments);
 		};
 };
 
