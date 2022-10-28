@@ -11,14 +11,14 @@ const ensureDataLayer = () => {
 };
 
 // Ensure gtag() function exists as per https://developers.google.com/tag-platform/devguides/consent
-// const ensureGtag = () => {
-// 	window.gtag =
-// 		window.gtag ||
-// 		function () {
-// 			// eslint-disable-next-line prefer-rest-params
-// 			return window.dataLayer?.push(arguments);
-// 		};
-// };
+const ensureGtag = () => {
+	window.gtag =
+		window.gtag ||
+		function () {
+			// eslint-disable-next-line prefer-rest-params
+			return window.dataLayer?.push(arguments);
+		};
+};
 
 // Parse the cookie that gets set by Cookie Control ourselves.
 // This allows the properties like CookieControl.preferenceCookies to be available
