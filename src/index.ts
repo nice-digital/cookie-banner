@@ -52,7 +52,7 @@ const parseCookieControlCookie = () => {
 export const loadCookieControl = (): void => {
 	ensureDataLayer();
 
-	// ensureGtag();
+	ensureGtag();
 
 	parseCookieControlCookie();
 

@@ -169,12 +169,6 @@ export const cookieControlConfig: CookieControlConfig = {
 					event: "cookie.analytics.accept",
 					analyticsCookies: true,
 				});
-				window.gtag =
-					window.gtag ||
-					function () {
-						// eslint-disable-next-line prefer-rest-params
-						return console.log("gtag disabled - arguments are: " + arguments);
-					};
 				window.gtag("consent", "update", { analytics_storage: "granted" });
 			},
 			onRevoke: function (): void {
@@ -183,12 +177,6 @@ export const cookieControlConfig: CookieControlConfig = {
 					event: "cookie.analytics.revoke",
 					analyticsCookies: false,
 				});
-				window.gtag =
-					window.gtag ||
-					function () {
-						// eslint-disable-next-line prefer-rest-params
-						return console.log("gtag disabled - arguments are: " + arguments);
-					};
 				window.gtag("consent", "update", { analytics_storage: "denied" });
 				// HotJar uses local storage with keys starting _hj
 				Object.keys(window.localStorage)
@@ -267,12 +255,6 @@ export const cookieControlConfig: CookieControlConfig = {
 					event: "cookie.marketing.accept",
 					marketingCookies: true,
 				});
-				window.gtag =
-					window.gtag ||
-					function () {
-						// eslint-disable-next-line prefer-rest-params
-						return console.log("gtag disabled - arguments are: " + arguments);
-					};
 				window.gtag("consent", "update", { ad_storage: "granted" });
 			},
 			onRevoke: function (): void {
@@ -281,12 +263,6 @@ export const cookieControlConfig: CookieControlConfig = {
 					event: "cookie.marketing.revoke",
 					marketingCookies: false,
 				});
-				window.gtag =
-					window.gtag ||
-					function () {
-						// eslint-disable-next-line prefer-rest-params
-						return console.log("gtag disabled - arguments are: " + arguments);
-					};
 				window.gtag("consent", "update", { ad_storage: "denied" });
 			},
 		},
