@@ -8,7 +8,7 @@ interface ValLoaderReturn {
 }
 
 const CookieControlScriptUrl =
-	"https://cc.cdn.civiccomputing.com/9/cookieControl-9.6.1.min.js";
+	"https://cc.cdn.civiccomputing.com/9/cookieControl-9.8.min.js";
 
 // Loads the civic cookie control banner from the Civic CDN
 const getCivicCookieControl = async (): Promise<string> => {
