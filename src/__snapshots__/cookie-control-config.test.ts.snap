@@ -58,6 +58,7 @@ Object {
     ".AspNetCore.Cookies",
     "ConsultationSession-*",
     "nice_internal_exclusion",
+    "csrftoken",
   ],
   "onLoad": [Function],
   "optionalCookies": Array [
@@ -184,7 +185,7 @@ These services may use cookies to help make advertising more effective. These co
   "statement": Object {
     "description": "For more information, view our",
     "name": "cookie statement.",
-    "updated": "09/07/2021",
+    "updated": "22/02/2023",
     "url": "https://www.nice.org.uk/cookies",
   },
   "text": Object {
