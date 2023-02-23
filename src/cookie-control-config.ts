@@ -86,6 +86,8 @@ export const cookieControlConfig: CookieControlConfig = {
 		"ConsultationSession-*",
 		//Internal exclusion cookie (used for analytics)
 		"nice_internal_exclusion",
+		//MAAS form cookie
+		"csrftoken",
 	],
 	optionalCookies: [
 		{
@@ -297,7 +299,7 @@ export const cookieControlConfig: CookieControlConfig = {
 		description: "For more information, view our",
 		name: "cookie statement.",
 		url: "https://www.nice.org.uk/cookies",
-		updated: "09/07/2021",
+		updated: "22/02/2023",
 	},
 
 	// Branding
