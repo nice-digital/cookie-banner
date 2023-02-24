@@ -10,6 +10,18 @@ const ensureDataLayer = () => {
 	window.dataLayer = window.dataLayer || [];
 };
 
+// Ensure gtag() function exists as per https://developers.google.com/tag-platform/devguides/consent
+const ensureGtag = () => {
+	window.gtag =
+		window.gtag ||
+		function () {
+			return window.dataLayer?.push(
+				// eslint-disable-next-line prefer-rest-params
+				arguments as unknown as Record<string, unknown>
+			);
+		};
+};
+
 // Parse the cookie that gets set by Cookie Control ourselves.
 // This allows the properties like CookieControl.preferenceCookies to be available
 // even before the license has loaded asynchronously.
@@ -41,6 +53,8 @@ const parseCookieControlCookie = () => {
 
 export const loadCookieControl = (): void => {
 	ensureDataLayer();
+
+	ensureGtag();
 
 	parseCookieControlCookie();
 

@@ -6,6 +6,7 @@ import { CookieControlPurpose } from "./types/cookie-control";
 describe("cookie-control-config", () => {
 	beforeEach(() => {
 		window.dataLayer = [];
+		window.gtag = jest.fn();
 
 		CookieControl.getCategoryConsent = (index: number): boolean => index === 0;
 	});
@@ -70,6 +71,30 @@ describe("cookie-control-config", () => {
 			expect(window.dataLayer?.[0]).toEqual({
 				event: `cookie.${eventName}`,
 				[cookieType]: boolVal,
+			});
+		}
+	);
+	it.each([
+		["granted", "analytics_storage", "onAccept", 1],
+		["denied", "analytics_storage", "onRevoke", 1],
+		["granted", "ad_storage", "onAccept", 2],
+		["denied", "ad_storage", "onRevoke", 2],
+	])(
+		"should set %s gtag consent for %s %s",
+		(
+			consentMode: string,
+			eventName: string,
+			methodName: string,
+			index: number
+		) => {
+			const cookieTypeConfig = cookieControlConfig.optionalCookies?.[index];
+			if (cookieTypeConfig) {
+				const method = cookieTypeConfig[methodName as "onRevoke" | "onAccept"];
+				if (method) method();
+			}
+			expect(window.gtag).toHaveBeenCalledTimes(1);
+			expect(window.gtag).toHaveBeenCalledWith("consent", "update", {
+				[eventName]: consentMode,
 			});
 		}
 	);
