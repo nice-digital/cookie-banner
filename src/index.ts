@@ -14,9 +14,8 @@ const ensureDataLayer = () => {
 const ensureGtag = () => {
 	window.gtag =
 		window.gtag ||
-		function () {
-			// eslint-disable-next-line prefer-rest-params
-			return window.dataLayer?.push(arguments);
+		function (...args: Record<string, unknown>[]) {
+			return window.dataLayer?.push(...args);
 		};
 };
 
