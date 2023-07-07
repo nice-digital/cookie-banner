@@ -135,6 +135,7 @@ export const cookieControlConfig: CookieControlConfig = {
 				"_gat_UA-*",
 				"_gid",
 				"_ga_*",
+				"_gadatalayer",
 				// Hotjar
 				"_hj*",
 				"ajs_*",
@@ -299,7 +300,7 @@ export const cookieControlConfig: CookieControlConfig = {
 		description: "For more information, view our",
 		name: "cookie statement.",
 		url: "https://www.nice.org.uk/cookies",
-		updated: "22/02/2023",
+		updated: "07/07/2023",
 	},
 
 	// Branding
