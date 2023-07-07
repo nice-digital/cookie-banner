@@ -84,6 +84,7 @@ Object {
         "_gat_UA-*",
         "_gid",
         "_ga_*",
+        "_gadatalayer",
         "_hj*",
         "ajs_*",
         "_gaexp",
@@ -185,7 +186,7 @@ These services may use cookies to help make advertising more effective. These co
   "statement": Object {
     "description": "For more information, view our",
     "name": "cookie statement.",
-    "updated": "22/02/2023",
+    "updated": "07/07/2023",
     "url": "https://www.nice.org.uk/cookies",
   },
   "text": Object {
