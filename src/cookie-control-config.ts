@@ -88,6 +88,7 @@ export const cookieControlConfig: CookieControlConfig = {
 		"nice_internal_exclusion",
 		//MAAS form cookie
 		"csrftoken",
+		"_gadatalayer",
 	],
 	optionalCookies: [
 		{
@@ -135,7 +136,7 @@ export const cookieControlConfig: CookieControlConfig = {
 				"_gat_UA-*",
 				"_gid",
 				"_ga_*",
-				"_gadatalayer",
+				// "_gadatalayer",
 				// Hotjar
 				"_hj*",
 				"ajs_*",
