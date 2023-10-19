@@ -59,6 +59,7 @@ Object {
     "ConsultationSession-*",
     "nice_internal_exclusion",
     "csrftoken",
+    "CKS-EULA-Accepted",
   ],
   "onLoad": [Function],
   "optionalCookies": Array [
