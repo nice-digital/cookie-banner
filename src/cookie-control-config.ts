@@ -88,6 +88,8 @@ export const cookieControlConfig: CookieControlConfig = {
 		"nice_internal_exclusion",
 		//MAAS form cookie
 		"csrftoken",
+		// CKS EULA acceptance cookie
+		"CKS-EULA-Accepted",
 	],
 	optionalCookies: [
 		{
