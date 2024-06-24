@@ -5,7 +5,7 @@
   "files.eol": "\n",
   "window.title": "${dirty}${activeEditorShort}${separator}Cookie Banner${separator}NICE",
   "editor.codeActionsOnSave": {
-    "source.fixAll": true
+    "source.fixAll": "explicit"
   },
   "editor.wordWrap": "bounded",
   "editor.wordWrapColumn": 120,
