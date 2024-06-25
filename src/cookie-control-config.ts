@@ -90,6 +90,8 @@ export const cookieControlConfig: CookieControlConfig = {
 		"csrftoken",
 		// CKS EULA acceptance cookie
 		"CKS-EULA-Accepted",
+		// BNF EULA acceptance cookie
+		"BNF-EULA-Accepted",
 	],
 	optionalCookies: [
 		{
