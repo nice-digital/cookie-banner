@@ -60,6 +60,7 @@ Object {
     "nice_internal_exclusion",
     "csrftoken",
     "CKS-EULA-Accepted",
+    "BNF-EULA-Accepted",
   ],
   "onLoad": [Function],
   "optionalCookies": Array [
