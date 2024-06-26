@@ -203,6 +203,23 @@ export const cookieControlConfig: CookieControlConfig = {
 				"_fbp",
 				"_fbc",
 				// Twitter appears to be cookieless: https://business.twitter.com/en/help/campaign-measurement-and-analytics/conversion-tracking-for-websites.html
+				// Stackadapt https://www.stackadapt.com/platform-and-services-privacy-policy
+				"user-id",
+				"user-id-v2",
+				"sa-camp-*",
+				"sa_aid_pv",
+				// Amazon ads
+				"ad-id",
+				// Xandr
+				"uuid2",
+				"uids",
+				"sess",
+				"lcu",
+				"anj",
+				"usersync",
+				"token",
+				"pses",
+				"XANDR_PANID",
 			],
 			thirdPartyCookies: [
 				{
@@ -253,6 +270,27 @@ export const cookieControlConfig: CookieControlConfig = {
 					thirdPartyCookies: true,
 					url: "https://help.twitter.com/en/rules-and-policies/twitter-cookies",
 				},
+				{
+					name: "Stackadapt",
+					description:
+						"Stackadapt shows adverts when you browse websites that opt to display advertising. It uses cookies to help to make advertising more effective.",
+					thirdPartyCookies: true,
+					url: "https://www.stackadapt.com/platform-and-services-privacy-policy",
+				},
+				{
+					name: "Amazon Ads",
+					description:
+						"Amazon shows adverts when you browse websites that opt to display advertising. It uses cookies to help to make advertising more effective.",
+					thirdPartyCookies: true,
+					url: "https://advertising.amazon.co.uk/help/G9Y77VYQ3VJZU5YV",
+				},
+				{
+					name: "Xandr",
+					description:
+						"Xandr shows adverts when you browse websites that opt to display advertising. It uses cookies to help to make advertising more effective.",
+					thirdPartyCookies: true,
+					url: "https://about.ads.microsoft.com/en-gb/solutions/xandr/digital-platform-cookie-policy",
+				},
 			],
 			onAccept: function (): void {
 				CookieControl.marketingCookies = true;
@@ -302,7 +340,7 @@ export const cookieControlConfig: CookieControlConfig = {
 		description: "For more information, view our",
 		name: "cookie statement.",
 		url: "https://www.nice.org.uk/cookies",
-		updated: "07/07/2023",
+		updated: "30/06/2024",
 	},
 
 	// Branding
