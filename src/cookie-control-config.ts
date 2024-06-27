@@ -249,7 +249,7 @@ export const cookieControlConfig: CookieControlConfig = {
 				},
 				{
 					name: "Amazon Ads",
-					optOutLink: "https://advertising.amazon.co.uk/help/G9Y77VYQ3VJZU5YV",
+					optOutLink: "https://www.amazon.co.uk/adprefs",
 				},
 				{
 					name: "Xandr",
