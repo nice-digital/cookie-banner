@@ -242,6 +242,20 @@ export const cookieControlConfig: CookieControlConfig = {
 					optOutLink:
 						"https://business.twitter.com/en/help/ads-policies/product-policies/interest-based-opt-out-policy.html",
 				},
+				{
+					name: "Stackadapt",
+					optOutLink:
+						"https://www.stackadapt.com/platform-and-services-privacy-policy",
+				},
+				{
+					name: "Amazon Ads",
+					optOutLink: "https://advertising.amazon.co.uk/help/G9Y77VYQ3VJZU5YV",
+				},
+				{
+					name: "Xandr",
+					optOutLink:
+						"https://about.ads.microsoft.com/en-gb/solutions/xandr/digital-platform-cookie-policy",
+				},
 			],
 			vendors: [
 				{

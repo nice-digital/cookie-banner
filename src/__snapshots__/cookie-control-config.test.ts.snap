@@ -165,6 +165,18 @@ These services may use cookies to help make advertising more effective. These co
           "name": "Twitter",
           "optOutLink": "https://business.twitter.com/en/help/ads-policies/product-policies/interest-based-opt-out-policy.html",
         },
+        Object {
+          "name": "Stackadapt",
+          "optOutLink": "https://www.stackadapt.com/platform-and-services-privacy-policy",
+        },
+        Object {
+          "name": "Amazon Ads",
+          "optOutLink": "https://advertising.amazon.co.uk/help/G9Y77VYQ3VJZU5YV",
+        },
+        Object {
+          "name": "Xandr",
+          "optOutLink": "https://about.ads.microsoft.com/en-gb/solutions/xandr/digital-platform-cookie-policy",
+        },
       ],
       "vendors": Array [
         Object {
@@ -220,7 +232,7 @@ These services may use cookies to help make advertising more effective. These co
   "statement": Object {
     "description": "For more information, view our",
     "name": "cookie statement.",
-    "updated": "30/06/2024",
+    "updated": "25/06/2024",
     "url": "https://www.nice.org.uk/cookies",
   },
   "text": Object {
