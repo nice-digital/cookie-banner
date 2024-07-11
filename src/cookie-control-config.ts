@@ -172,19 +172,19 @@ export const cookieControlConfig: CookieControlConfig = {
 			],
 			onAccept: function (): void {
 				CookieControl.analyticsCookies = true;
+				window.gtag("consent", "update", { analytics_storage: "granted" });
 				window.dataLayer?.push({
 					event: "cookie.analytics.accept",
 					analyticsCookies: true,
 				});
-				window.gtag("consent", "update", { analytics_storage: "granted" });
 			},
 			onRevoke: function (): void {
 				CookieControl.analyticsCookies = false;
+				window.gtag("consent", "update", { analytics_storage: "denied" });
 				window.dataLayer?.push({
 					event: "cookie.analytics.revoke",
 					analyticsCookies: false,
 				});
-				window.gtag("consent", "update", { analytics_storage: "denied" });
 				// HotJar uses local storage with keys starting _hj
 				Object.keys(window.localStorage)
 					.filter((key) => /^_hj/.test(key))
@@ -195,7 +195,7 @@ export const cookieControlConfig: CookieControlConfig = {
 			name: "marketing",
 			label: "Marketing and advertising cookies",
 			description:
-				"We use Google Ads, LinkedIn, Facebook and Twitter to show adverts on external sites to promote NICE services, events and content.\n\nThese services may use cookies to help make advertising more effective. These cookies are used for things like showing relevant adverts based on website visits, preventing the same ad from continuously re-appearing, or by measuring how many times people click on these adverts.",
+				"We use Google Ads, LinkedIn, Facebook, Stackadapt, Amazon DSP and Xandr to show adverts on external sites to promote NICE services, events and content.\n\nThese services may use cookies to help make advertising more effective. These cookies are used for things like showing relevant adverts based on website visits, preventing the same ad from continuously re-appearing, or by measuring how many times people click on these adverts.",
 			cookies: [
 				// Conversion linker https://support.google.com/tagmanager/answer/7549390?hl=en
 				"_gcl_*",
@@ -310,19 +310,19 @@ export const cookieControlConfig: CookieControlConfig = {
 			],
 			onAccept: function (): void {
 				CookieControl.marketingCookies = true;
+				window.gtag("consent", "update", { ad_storage: "granted" });
 				window.dataLayer?.push({
 					event: "cookie.marketing.accept",
 					marketingCookies: true,
 				});
-				window.gtag("consent", "update", { ad_storage: "granted" });
 			},
 			onRevoke: function (): void {
 				CookieControl.marketingCookies = false;
+				window.gtag("consent", "update", { ad_storage: "denied" });
 				window.dataLayer?.push({
 					event: "cookie.marketing.revoke",
 					marketingCookies: false,
 				});
-				window.gtag("consent", "update", { ad_storage: "denied" });
 			},
 		},
 	],
