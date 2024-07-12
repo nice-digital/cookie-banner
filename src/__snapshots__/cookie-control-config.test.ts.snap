@@ -126,8 +126,10 @@ These tools set cookies that store anonymised information about how you got to t
         "li_fat_id",
         "_fbp",
         "_fbc",
-        "user-id",
-        "user-id-v2",
+        "sa-user-id",
+        "sa-user-id-v*",
+        "sa-r-date",
+        "sa-r-source",
         "sa-camp-*",
         "sa_aid_pv",
         "ad-id",
@@ -140,8 +142,10 @@ These tools set cookies that store anonymised information about how you got to t
         "token",
         "pses",
         "XANDR_PANID",
+        "_clck",
+        "_clsk",
       ],
-      "description": "We use Google Ads, LinkedIn, Facebook, Stackadapt, Amazon DSP and Xandr to show adverts on external sites to promote NICE services, events and content.
+      "description": "We use Google Ads, LinkedIn, Facebook, Stackadapt, Amazon DSP, Xandr and Microsoft Ads to show adverts on external sites to promote NICE services, events and content.
 
 These services may use cookies to help make advertising more effective. These cookies are used for things like showing relevant adverts based on website visits, preventing the same ad from continuously re-appearing, or by measuring how many times people click on these adverts.",
       "label": "Marketing and advertising cookies",
@@ -176,6 +180,10 @@ These services may use cookies to help make advertising more effective. These co
         Object {
           "name": "Xandr",
           "optOutLink": "https://about.ads.microsoft.com/en-gb/solutions/xandr/digital-platform-cookie-policy",
+        },
+        Object {
+          "name": "Microsoft Ads",
+          "optOutLink": "https://privacy.microsoft.com/en-us/privacystatement#maincookiessimilartechnologiesmodule",
         },
       ],
       "vendors": Array [
@@ -220,6 +228,12 @@ These services may use cookies to help make advertising more effective. These co
           "name": "Xandr",
           "thirdPartyCookies": true,
           "url": "https://about.ads.microsoft.com/en-gb/solutions/xandr/digital-platform-cookie-policy",
+        },
+        Object {
+          "description": "Microsoft Ads serves adverts on Microsoft products and services such as Bing search. It uses cookies to help to make advertising more effective.",
+          "name": "Microsoft Ads",
+          "thirdPartyCookies": true,
+          "url": "https://privacy.microsoft.com/en-us/privacystatement#maincookiessimilartechnologiesmodule",
         },
       ],
     },

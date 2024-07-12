@@ -195,7 +195,7 @@ export const cookieControlConfig: CookieControlConfig = {
 			name: "marketing",
 			label: "Marketing and advertising cookies",
 			description:
-				"We use Google Ads, LinkedIn, Facebook, Stackadapt, Amazon DSP and Xandr to show adverts on external sites to promote NICE services, events and content.\n\nThese services may use cookies to help make advertising more effective. These cookies are used for things like showing relevant adverts based on website visits, preventing the same ad from continuously re-appearing, or by measuring how many times people click on these adverts.",
+				"We use Google Ads, LinkedIn, Facebook, Stackadapt, Amazon DSP, Xandr and Microsoft Ads to show adverts on external sites to promote NICE services, events and content.\n\nThese services may use cookies to help make advertising more effective. These cookies are used for things like showing relevant adverts based on website visits, preventing the same ad from continuously re-appearing, or by measuring how many times people click on these adverts.",
 			cookies: [
 				// Conversion linker https://support.google.com/tagmanager/answer/7549390?hl=en
 				"_gcl_*",
@@ -206,8 +206,10 @@ export const cookieControlConfig: CookieControlConfig = {
 				"_fbc",
 				// Twitter appears to be cookieless: https://business.twitter.com/en/help/campaign-measurement-and-analytics/conversion-tracking-for-websites.html
 				// Stackadapt https://www.stackadapt.com/platform-and-services-privacy-policy
-				"user-id",
-				"user-id-v2",
+				"sa-user-id",
+				"sa-user-id-v*",
+				"sa-r-date",
+				"sa-r-source",
 				"sa-camp-*",
 				"sa_aid_pv",
 				// Amazon ads
@@ -222,6 +224,9 @@ export const cookieControlConfig: CookieControlConfig = {
 				"token",
 				"pses",
 				"XANDR_PANID",
+				// Microsoft ads - clarity
+				"_clck",
+				"_clsk",
 			],
 			thirdPartyCookies: [
 				{
@@ -255,6 +260,11 @@ export const cookieControlConfig: CookieControlConfig = {
 					name: "Xandr",
 					optOutLink:
 						"https://about.ads.microsoft.com/en-gb/solutions/xandr/digital-platform-cookie-policy",
+				},
+				{
+					name: "Microsoft Ads",
+					optOutLink:
+						"https://privacy.microsoft.com/en-us/privacystatement#maincookiessimilartechnologiesmodule",
 				},
 			],
 			vendors: [
@@ -306,6 +316,13 @@ export const cookieControlConfig: CookieControlConfig = {
 						"Xandr shows adverts when you browse websites that opt to display advertising. It uses cookies to help to make advertising more effective.",
 					thirdPartyCookies: true,
 					url: "https://about.ads.microsoft.com/en-gb/solutions/xandr/digital-platform-cookie-policy",
+				},
+				{
+					name: "Microsoft Ads",
+					description:
+						"Microsoft Ads serves adverts on Microsoft products and services such as Bing search. It uses cookies to help to make advertising more effective.",
+					thirdPartyCookies: true,
+					url: "https://privacy.microsoft.com/en-us/privacystatement#maincookiessimilartechnologiesmodule",
 				},
 			],
 			onAccept: function (): void {
@@ -375,7 +392,7 @@ export const cookieControlConfig: CookieControlConfig = {
 		highlightFocus: false,
 	},
 
-	// Fix for CB-73 Banner pops up between evidenc.nhs.uk and other nice.org.uk domains
+	// Fix for CB-73 Banner pops up between evidence.nhs.uk and other nice.org.uk domains
 	sameSiteCookie: false,
 	sameSiteValue: "Lax",
 };
