@@ -227,6 +227,11 @@ export const cookieControlConfig: CookieControlConfig = {
 				// Microsoft ads - clarity
 				"_clck",
 				"_clsk",
+				// Microsoft ads - Bing
+				"_uetsid",
+				"_uetvid",
+				"_uetmsclkid",
+				"MUID",
 			],
 			thirdPartyCookies: [
 				{
@@ -373,7 +378,7 @@ export const cookieControlConfig: CookieControlConfig = {
 		description: "For more information, view our",
 		name: "cookie statement.",
 		url: "https://www.nice.org.uk/cookies",
-		updated: "12/07/2024",
+		updated: "17/07/2024",
 	},
 
 	// Branding
