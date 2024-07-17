@@ -144,6 +144,10 @@ These tools set cookies that store anonymised information about how you got to t
         "XANDR_PANID",
         "_clck",
         "_clsk",
+        "_uetsid",
+        "_uetvid",
+        "_uetmsclkid",
+        "MUID",
       ],
       "description": "We use Google Ads, LinkedIn, Facebook, Stackadapt, Amazon DSP, Xandr and Microsoft Ads to show adverts on external sites to promote NICE services, events and content.
 
@@ -246,7 +250,7 @@ These services may use cookies to help make advertising more effective. These co
   "statement": Object {
     "description": "For more information, view our",
     "name": "cookie statement.",
-    "updated": "12/07/2024",
+    "updated": "17/07/2024",
     "url": "https://www.nice.org.uk/cookies",
   },
   "text": Object {
