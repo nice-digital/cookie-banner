@@ -210,6 +210,8 @@ export const cookieControlConfig: CookieControlConfig = {
 				"sa-user-id-v*",
 				"sa-r-date",
 				"sa-r-source",
+				"sa-u-date",
+				"sa-u-source",
 				"sa-camp-*",
 				"sa_aid_pv",
 				// Amazon ads

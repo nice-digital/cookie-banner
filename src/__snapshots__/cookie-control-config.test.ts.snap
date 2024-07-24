@@ -130,6 +130,8 @@ These tools set cookies that store anonymised information about how you got to t
         "sa-user-id-v*",
         "sa-r-date",
         "sa-r-source",
+        "sa-u-date",
+        "sa-u-source",
         "sa-camp-*",
         "sa_aid_pv",
         "ad-id",
