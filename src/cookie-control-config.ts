@@ -195,7 +195,7 @@ export const cookieControlConfig: CookieControlConfig = {
 			name: "marketing",
 			label: "Marketing and advertising cookies",
 			description:
-				"We use Google Ads, LinkedIn, Facebook, Stackadapt, Amazon DSP, Xandr and Microsoft Ads to show adverts on external sites to promote NICE services, events and content.\n\nThese services may use cookies to help make advertising more effective. These cookies are used for things like showing relevant adverts based on website visits, preventing the same ad from continuously re-appearing, or by measuring how many times people click on these adverts.",
+				"We use Google Ads, LinkedIn, Facebook, Twitter, Stackadapt, Amazon DSP, Xandr and Microsoft Ads to show adverts on external sites to promote NICE services, events and content.\n\nThese services may use cookies to help make advertising more effective. These cookies are used for things like showing relevant adverts based on website visits, preventing the same ad from continuously re-appearing, or by measuring how many times people click on these adverts.",
 			cookies: [
 				// Conversion linker https://support.google.com/tagmanager/answer/7549390?hl=en
 				"_gcl_*",
