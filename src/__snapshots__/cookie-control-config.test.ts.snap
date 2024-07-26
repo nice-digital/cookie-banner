@@ -126,8 +126,32 @@ These tools set cookies that store anonymised information about how you got to t
         "li_fat_id",
         "_fbp",
         "_fbc",
+        "sa-user-id",
+        "sa-user-id-v*",
+        "sa-r-date",
+        "sa-r-source",
+        "sa-u-date",
+        "sa-u-source",
+        "sa-camp-*",
+        "sa_aid_pv",
+        "ad-id",
+        "uuid2",
+        "uids",
+        "sess",
+        "lcu",
+        "anj",
+        "usersync",
+        "token",
+        "pses",
+        "XANDR_PANID",
+        "_clck",
+        "_clsk",
+        "_uetsid",
+        "_uetvid",
+        "_uetmsclkid",
+        "MUID",
       ],
-      "description": "We use Google Ads, LinkedIn, Facebook and Twitter to show adverts on external sites to promote NICE services, events and content.
+      "description": "We use Google Ads, LinkedIn, Facebook, Twitter, Stackadapt, Amazon DSP, Xandr and Microsoft Ads to show adverts on external sites to promote NICE services, events and content.
 
 These services may use cookies to help make advertising more effective. These cookies are used for things like showing relevant adverts based on website visits, preventing the same ad from continuously re-appearing, or by measuring how many times people click on these adverts.",
       "label": "Marketing and advertising cookies",
@@ -150,6 +174,22 @@ These services may use cookies to help make advertising more effective. These co
         Object {
           "name": "Twitter",
           "optOutLink": "https://business.twitter.com/en/help/ads-policies/product-policies/interest-based-opt-out-policy.html",
+        },
+        Object {
+          "name": "Stackadapt",
+          "optOutLink": "https://www.stackadapt.com/platform-and-services-privacy-policy",
+        },
+        Object {
+          "name": "Amazon Ads",
+          "optOutLink": "https://www.amazon.co.uk/adprefs",
+        },
+        Object {
+          "name": "Xandr",
+          "optOutLink": "https://about.ads.microsoft.com/en-gb/solutions/xandr/digital-platform-cookie-policy",
+        },
+        Object {
+          "name": "Microsoft Ads",
+          "optOutLink": "https://privacy.microsoft.com/en-us/privacystatement#maincookiessimilartechnologiesmodule",
         },
       ],
       "vendors": Array [
@@ -177,6 +217,30 @@ These services may use cookies to help make advertising more effective. These co
           "thirdPartyCookies": true,
           "url": "https://help.twitter.com/en/rules-and-policies/twitter-cookies",
         },
+        Object {
+          "description": "Stackadapt shows adverts when you browse websites that opt to display advertising. It uses cookies to help to make advertising more effective.",
+          "name": "Stackadapt",
+          "thirdPartyCookies": true,
+          "url": "https://www.stackadapt.com/platform-and-services-privacy-policy",
+        },
+        Object {
+          "description": "Amazon shows adverts when you browse websites that opt to display advertising. It uses cookies to help to make advertising more effective.",
+          "name": "Amazon Ads",
+          "thirdPartyCookies": true,
+          "url": "https://advertising.amazon.co.uk/help/G9Y77VYQ3VJZU5YV",
+        },
+        Object {
+          "description": "Xandr shows adverts when you browse websites that opt to display advertising. It uses cookies to help to make advertising more effective.",
+          "name": "Xandr",
+          "thirdPartyCookies": true,
+          "url": "https://about.ads.microsoft.com/en-gb/solutions/xandr/digital-platform-cookie-policy",
+        },
+        Object {
+          "description": "Microsoft Ads serves adverts on Microsoft products and services such as Bing search. It uses cookies to help to make advertising more effective.",
+          "name": "Microsoft Ads",
+          "thirdPartyCookies": true,
+          "url": "https://privacy.microsoft.com/en-us/privacystatement#maincookiessimilartechnologiesmodule",
+        },
       ],
     },
   ],
@@ -188,7 +252,7 @@ These services may use cookies to help make advertising more effective. These co
   "statement": Object {
     "description": "For more information, view our",
     "name": "cookie statement.",
-    "updated": "07/07/2023",
+    "updated": "17/07/2024",
     "url": "https://www.nice.org.uk/cookies",
   },
   "text": Object {

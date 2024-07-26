@@ -172,19 +172,19 @@ export const cookieControlConfig: CookieControlConfig = {
 			],
 			onAccept: function (): void {
 				CookieControl.analyticsCookies = true;
+				window.gtag("consent", "update", { analytics_storage: "granted" });
 				window.dataLayer?.push({
 					event: "cookie.analytics.accept",
 					analyticsCookies: true,
 				});
-				window.gtag("consent", "update", { analytics_storage: "granted" });
 			},
 			onRevoke: function (): void {
 				CookieControl.analyticsCookies = false;
+				window.gtag("consent", "update", { analytics_storage: "denied" });
 				window.dataLayer?.push({
 					event: "cookie.analytics.revoke",
 					analyticsCookies: false,
 				});
-				window.gtag("consent", "update", { analytics_storage: "denied" });
 				// HotJar uses local storage with keys starting _hj
 				Object.keys(window.localStorage)
 					.filter((key) => /^_hj/.test(key))
@@ -195,7 +195,7 @@ export const cookieControlConfig: CookieControlConfig = {
 			name: "marketing",
 			label: "Marketing and advertising cookies",
 			description:
-				"We use Google Ads, LinkedIn, Facebook and Twitter to show adverts on external sites to promote NICE services, events and content.\n\nThese services may use cookies to help make advertising more effective. These cookies are used for things like showing relevant adverts based on website visits, preventing the same ad from continuously re-appearing, or by measuring how many times people click on these adverts.",
+				"We use Google Ads, LinkedIn, Facebook, Twitter, Stackadapt, Amazon DSP, Xandr and Microsoft Ads to show adverts on external sites to promote NICE services, events and content.\n\nThese services may use cookies to help make advertising more effective. These cookies are used for things like showing relevant adverts based on website visits, preventing the same ad from continuously re-appearing, or by measuring how many times people click on these adverts.",
 			cookies: [
 				// Conversion linker https://support.google.com/tagmanager/answer/7549390?hl=en
 				"_gcl_*",
@@ -205,6 +205,35 @@ export const cookieControlConfig: CookieControlConfig = {
 				"_fbp",
 				"_fbc",
 				// Twitter appears to be cookieless: https://business.twitter.com/en/help/campaign-measurement-and-analytics/conversion-tracking-for-websites.html
+				// Stackadapt https://www.stackadapt.com/platform-and-services-privacy-policy
+				"sa-user-id",
+				"sa-user-id-v*",
+				"sa-r-date",
+				"sa-r-source",
+				"sa-u-date",
+				"sa-u-source",
+				"sa-camp-*",
+				"sa_aid_pv",
+				// Amazon ads
+				"ad-id",
+				// Xandr
+				"uuid2",
+				"uids",
+				"sess",
+				"lcu",
+				"anj",
+				"usersync",
+				"token",
+				"pses",
+				"XANDR_PANID",
+				// Microsoft ads - clarity
+				"_clck",
+				"_clsk",
+				// Microsoft ads - Bing
+				"_uetsid",
+				"_uetvid",
+				"_uetmsclkid",
+				"MUID",
 			],
 			thirdPartyCookies: [
 				{
@@ -224,6 +253,25 @@ export const cookieControlConfig: CookieControlConfig = {
 					name: "Twitter",
 					optOutLink:
 						"https://business.twitter.com/en/help/ads-policies/product-policies/interest-based-opt-out-policy.html",
+				},
+				{
+					name: "Stackadapt",
+					optOutLink:
+						"https://www.stackadapt.com/platform-and-services-privacy-policy",
+				},
+				{
+					name: "Amazon Ads",
+					optOutLink: "https://www.amazon.co.uk/adprefs",
+				},
+				{
+					name: "Xandr",
+					optOutLink:
+						"https://about.ads.microsoft.com/en-gb/solutions/xandr/digital-platform-cookie-policy",
+				},
+				{
+					name: "Microsoft Ads",
+					optOutLink:
+						"https://privacy.microsoft.com/en-us/privacystatement#maincookiessimilartechnologiesmodule",
 				},
 			],
 			vendors: [
@@ -255,22 +303,50 @@ export const cookieControlConfig: CookieControlConfig = {
 					thirdPartyCookies: true,
 					url: "https://help.twitter.com/en/rules-and-policies/twitter-cookies",
 				},
+				{
+					name: "Stackadapt",
+					description:
+						"Stackadapt shows adverts when you browse websites that opt to display advertising. It uses cookies to help to make advertising more effective.",
+					thirdPartyCookies: true,
+					url: "https://www.stackadapt.com/platform-and-services-privacy-policy",
+				},
+				{
+					name: "Amazon Ads",
+					description:
+						"Amazon shows adverts when you browse websites that opt to display advertising. It uses cookies to help to make advertising more effective.",
+					thirdPartyCookies: true,
+					url: "https://advertising.amazon.co.uk/help/G9Y77VYQ3VJZU5YV",
+				},
+				{
+					name: "Xandr",
+					description:
+						"Xandr shows adverts when you browse websites that opt to display advertising. It uses cookies to help to make advertising more effective.",
+					thirdPartyCookies: true,
+					url: "https://about.ads.microsoft.com/en-gb/solutions/xandr/digital-platform-cookie-policy",
+				},
+				{
+					name: "Microsoft Ads",
+					description:
+						"Microsoft Ads serves adverts on Microsoft products and services such as Bing search. It uses cookies to help to make advertising more effective.",
+					thirdPartyCookies: true,
+					url: "https://privacy.microsoft.com/en-us/privacystatement#maincookiessimilartechnologiesmodule",
+				},
 			],
 			onAccept: function (): void {
 				CookieControl.marketingCookies = true;
+				window.gtag("consent", "update", { ad_storage: "granted" });
 				window.dataLayer?.push({
 					event: "cookie.marketing.accept",
 					marketingCookies: true,
 				});
-				window.gtag("consent", "update", { ad_storage: "granted" });
 			},
 			onRevoke: function (): void {
 				CookieControl.marketingCookies = false;
+				window.gtag("consent", "update", { ad_storage: "denied" });
 				window.dataLayer?.push({
 					event: "cookie.marketing.revoke",
 					marketingCookies: false,
 				});
-				window.gtag("consent", "update", { ad_storage: "denied" });
 			},
 		},
 	],
@@ -304,7 +380,7 @@ export const cookieControlConfig: CookieControlConfig = {
 		description: "For more information, view our",
 		name: "cookie statement.",
 		url: "https://www.nice.org.uk/cookies",
-		updated: "07/07/2023",
+		updated: "17/07/2024",
 	},
 
 	// Branding
@@ -323,7 +399,7 @@ export const cookieControlConfig: CookieControlConfig = {
 		highlightFocus: false,
 	},
 
-	// Fix for CB-73 Banner pops up between evidenc.nhs.uk and other nice.org.uk domains
+	// Fix for CB-73 Banner pops up between evidence.nhs.uk and other nice.org.uk domains
 	sameSiteCookie: false,
 	sameSiteValue: "Lax",
 };
