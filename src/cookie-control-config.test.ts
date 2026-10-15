@@ -34,7 +34,7 @@ describe("cookie-control-config", () => {
 	});
 
 	it("should push cookie.load dataLayer event on load", () => {
-		cookieControlConfig.onLoad && cookieControlConfig.onLoad();
+		cookieControlConfig.onLoad?.();
 		expect(window.dataLayer).toHaveLength(1);
 		expect(window.dataLayer?.[0]).toEqual({
 			event: "cookie.load",

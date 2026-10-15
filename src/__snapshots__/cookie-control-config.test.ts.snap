@@ -1,12 +1,12 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`cookie-control-config should match snapshot 1`] = `
-Object {
-  "accessibility": Object {
+{
+  "accessibility": {
     "highlightFocus": false,
   },
   "apiKey": "843970763414bd3ac1229c12767f5e7fab9ef68c",
-  "branding": Object {
+  "branding": {
     "backgroundColor": "#fff",
     "fontColor": "#0e0e0e",
     "fontFamily": "Inter,'Helvetica Neue',Helvetica,Arial,sans-serif",
@@ -16,7 +16,7 @@ Object {
   },
   "encodeCookie": true,
   "initialState": "open",
-  "necessaryCookies": Array [
+  "necessaryCookies": [
     "AWSELB",
     "AWSELBCORS",
     "AWSALBTG",
@@ -63,9 +63,9 @@ Object {
     "BNF-EULA-Accepted",
   ],
   "onLoad": [Function],
-  "optionalCookies": Array [
-    Object {
-      "cookies": Array [
+  "optionalCookies": [
+    {
+      "cookies": [
         "TutorialVisible",
         "HoistSearches",
         "NICE_guidanceList_*",
@@ -80,8 +80,8 @@ Object {
       "onAccept": [Function],
       "onRevoke": [Function],
     },
-    Object {
-      "cookies": Array [
+    {
+      "cookies": [
         "_ga",
         "_gat_UA-*",
         "_gid",
@@ -99,20 +99,20 @@ These tools set cookies that store anonymised information about how you got to t
       "name": "analytics",
       "onAccept": [Function],
       "onRevoke": [Function],
-      "vendors": Array [
-        Object {
+      "vendors": [
+        {
           "description": "We use Google Analytics for usage metrics like page views and link clicks. It uses cookies to join up user behaviour across multiple page views and sessions.",
           "name": "Google Analytics",
           "thirdPartyCookies": false,
           "url": "https://policies.google.com/technologies/cookies?hl=en-US",
         },
-        Object {
+        {
           "description": "We use Hotjar for behaviour analysis, heatmaps, clickmaps, usage recordings, polls and surveys. It uses cookies to stop users from seeing the same poll twice.",
           "name": "HotJar",
           "thirdPartyCookies": false,
           "url": "https://help.hotjar.com/hc/en-us/articles/115011789248-Hotjar-Cookie-Information",
         },
-        Object {
+        {
           "description": "We use Google Optimize to experiment with new content and designs to help improve our services. It uses cookies to remember which experiments a user has seen.",
           "name": "Google Optimize",
           "thirdPartyCookies": false,
@@ -120,8 +120,8 @@ These tools set cookies that store anonymised information about how you got to t
         },
       ],
     },
-    Object {
-      "cookies": Array [
+    {
+      "cookies": [
         "_gcl_*",
         "li_fat_id",
         "_fbp",
@@ -158,84 +158,84 @@ These services may use cookies to help make advertising more effective. These co
       "name": "marketing",
       "onAccept": [Function],
       "onRevoke": [Function],
-      "thirdPartyCookies": Array [
-        Object {
+      "thirdPartyCookies": [
+        {
           "name": "Google Ads",
           "optOutLink": "https://adssettings.google.com/",
         },
-        Object {
+        {
           "name": "LinkedIn",
           "optOutLink": "https://www.linkedin.com/help/linkedin/answer/62931/manage-advertising-preferences?lang=en",
         },
-        Object {
+        {
           "name": "Facebook",
           "optOutLink": "https://en-gb.facebook.com/help/568137493302217",
         },
-        Object {
+        {
           "name": "Twitter",
           "optOutLink": "https://business.twitter.com/en/help/ads-policies/product-policies/interest-based-opt-out-policy.html",
         },
-        Object {
+        {
           "name": "Stackadapt",
           "optOutLink": "https://www.stackadapt.com/platform-and-services-privacy-policy",
         },
-        Object {
+        {
           "name": "Amazon Ads",
           "optOutLink": "https://www.amazon.co.uk/adprefs",
         },
-        Object {
+        {
           "name": "Xandr",
           "optOutLink": "https://about.ads.microsoft.com/en-gb/solutions/xandr/digital-platform-cookie-policy",
         },
-        Object {
+        {
           "name": "Microsoft Ads",
           "optOutLink": "https://privacy.microsoft.com/en-us/privacystatement#maincookiessimilartechnologiesmodule",
         },
       ],
-      "vendors": Array [
-        Object {
+      "vendors": [
+        {
           "description": "Google Ads serves adverts on Google products and services. It uses cookies to help to make advertising more effective.",
           "name": "Google Ads",
           "thirdPartyCookies": true,
           "url": "https://policies.google.com/technologies/ads",
         },
-        Object {
+        {
           "description": "LinkedIn shows adverts when you browse LinkedIn products and services. It uses cookies to help to make advertising more effective.",
           "name": "LinkedIn",
           "thirdPartyCookies": true,
           "url": "https://www.linkedin.com/legal/cookie-policy",
         },
-        Object {
+        {
           "description": "Facebook shows adverts when you browse their platform. It uses cookies to help to make advertising more effective.",
           "name": "Facebook",
           "thirdPartyCookies": true,
           "url": "https://en-gb.facebook.com/policy/cookies/",
         },
-        Object {
+        {
           "description": "Twitter shows adverts when you browse their platform. It uses cookies to help to make advertising more effective.",
           "name": "Twitter",
           "thirdPartyCookies": true,
           "url": "https://help.twitter.com/en/rules-and-policies/twitter-cookies",
         },
-        Object {
+        {
           "description": "Stackadapt shows adverts when you browse websites that opt to display advertising. It uses cookies to help to make advertising more effective.",
           "name": "Stackadapt",
           "thirdPartyCookies": true,
           "url": "https://www.stackadapt.com/platform-and-services-privacy-policy",
         },
-        Object {
+        {
           "description": "Amazon shows adverts when you browse websites that opt to display advertising. It uses cookies to help to make advertising more effective.",
           "name": "Amazon Ads",
           "thirdPartyCookies": true,
           "url": "https://advertising.amazon.co.uk/help/G9Y77VYQ3VJZU5YV",
         },
-        Object {
+        {
           "description": "Xandr shows adverts when you browse websites that opt to display advertising. It uses cookies to help to make advertising more effective.",
           "name": "Xandr",
           "thirdPartyCookies": true,
           "url": "https://about.ads.microsoft.com/en-gb/solutions/xandr/digital-platform-cookie-policy",
         },
-        Object {
+        {
           "description": "Microsoft Ads serves adverts on Microsoft products and services such as Bing search. It uses cookies to help to make advertising more effective.",
           "name": "Microsoft Ads",
           "thirdPartyCookies": true,
@@ -249,13 +249,13 @@ These services may use cookies to help make advertising more effective. These co
   "rejectButton": true,
   "sameSiteCookie": false,
   "sameSiteValue": "Lax",
-  "statement": Object {
+  "statement": {
     "description": "For more information, view our",
     "name": "cookie statement.",
     "updated": "17/07/2024",
     "url": "https://www.nice.org.uk/cookies",
   },
-  "text": Object {
+  "text": {
     "acceptSettings": "Accept all cookies",
     "closeLabel": "Close cookie banner",
     "intro": "Cookies are files saved on your phone, tablet or computer when you visit a website.

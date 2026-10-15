@@ -11,7 +11,8 @@
     "noImplicitAny": true,
     "forceConsistentCasingInFileNames": true,
     "allowJs": true,
-    "declaration": false
+    "declaration": false,
+    "types": ["jest", "node", "gtag.js"]
   },
   "exclude": ["node_modules", "lib", "src/cdn.ts"],
   "include": ["src"]
