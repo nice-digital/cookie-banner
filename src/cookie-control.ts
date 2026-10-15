@@ -12,9 +12,9 @@ const CookieControlScriptUrl =
 
 // Loads the civic cookie control banner from the Civic CDN
 const getCivicCookieControl = async (): Promise<string> => {
-	return new Promise(async (resolve, reject) => {
+	return new Promise((resolve, reject) => {
 		const body: Uint8Array[] = [];
-		const req = await https.get(CookieControlScriptUrl, (res) => {
+		const req = https.get(CookieControlScriptUrl, (res) => {
 			res.on("data", (chunk) => body.push(chunk));
 			res.on("end", () => {
 				const data = Buffer.concat(body).toString();

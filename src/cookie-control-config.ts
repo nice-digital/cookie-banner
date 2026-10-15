@@ -15,6 +15,7 @@ export const cookieControlConfig: CookieControlConfig = {
 			analyticsCookies = CookieControl.getCategoryConsent(1) || false;
 			marketingCookies = CookieControl.getCategoryConsent(2) || false;
 		} catch {
+			// Ignore: getCategoryConsent throws before the consent cookie exists
 		} finally {
 			CookieControl.analyticsCookies = analyticsCookies;
 			CookieControl.preferenceCookies = preferenceCookies;
