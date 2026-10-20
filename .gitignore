@@ -109,3 +109,7 @@ bin
 obj
 
 *.nupkg
+
+# tsc has no outDir so `npm run ts` / `npm pack` emits next to the sources
+src/**/*.js
+src/**/*.js.map

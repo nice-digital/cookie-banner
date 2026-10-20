@@ -44,45 +44,53 @@
     "lib"
   ],
   "devDependencies": {
+    "@eslint/js": "^10.0.0",
     "@nice-digital/browserslist-config": "^2.0.1",
     "@nice-digital/nds-core": "^3.0.0",
     "@types/gtag.js": "0.0.7",
-    "@types/jest": "^28.1.8",
-    "@types/js-cookie": "^3.0.2",
-    "@typescript-eslint/eslint-plugin": "^5.52.0",
-    "@typescript-eslint/parser": "^5.52.0",
-    "@webpack-cli/serve": "^1.7.0",
+    "@types/jest": "^30.0.0",
+    "@types/js-cookie": "^3.0.6",
+    "@types/node": "^22.18.0",
     "clean-webpack-plugin": "^4.0.0",
-    "cross-env": "^7.0.3",
-    "css-loader": "^6.7.3",
-    "eslint": "^8.34.0",
-    "eslint-config-prettier": "^8.6.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "html-webpack-plugin": "^5.5.0",
-    "jest": "^28.1.3",
-    "jest-environment-jsdom": "^28.1.3",
+    "cross-env": "^10.1.0",
+    "css-loader": "^7.1.5",
+    "eslint": "^10.12.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.6",
+    "globals": "^17.13.0",
+    "html-webpack-plugin": "^5.6.8",
+    "jest": "^30.5.2",
+    "jest-environment-jsdom": "^30.5.2",
     "jest-teamcity-reporter": "^0.9.0",
     "node-notifier": "^10.0.1",
-    "prettier": "^2.8.4",
-    "sass": "^1.58.2",
-    "sass-loader": "^13.2.0",
-    "style-loader": "^3.3.1",
-    "ts-jest": "^28.0.8",
-    "ts-loader": "^9.4.2",
-    "typescript": "^4.9.5",
-    "val-loader": "^5.0.1",
-    "webpack": "^5.75.0",
-    "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.11.1",
-    "webpack-merge": "^5.8.0"
+    "prettier": "^3.9.9",
+    "sass": "^1.105.1",
+    "sass-loader": "^17.0.1",
+    "style-loader": "^4.0.0",
+    "ts-jest": "^29.4.14",
+    "ts-loader": "^9.6.2",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.71.1",
+    "val-loader": "^6.0.0",
+    "webpack": "^5.111.1",
+    "webpack-cli": "^7.2.3",
+    "webpack-dev-server": "^6.0.0",
+    "webpack-merge": "^6.0.1"
   },
   "dependencies": {
     "js-cookie": "^3.0.1"
   },
   "overrides": {
-    "semver": "^7.5.3"
+    "semver": "^7.5.3",
+    "node-notifier": {
+      "uuid": "^11.1.1"
+    },
+    "@istanbuljs/load-nyc-config": {
+      "js-yaml": "^4.1.0"
+    }
   },
   "volta": {
-    "node": "16.19.1"
+    "node": "22.19.0",
+    "npm": "11.21.0"
   }
 }
